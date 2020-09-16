@@ -36,6 +36,25 @@ class CreateProductsTable extends Migration
             $table->integer('discount');
             $table->integer('sell_count');
 
+            /*TIN TUC*/
+            $table->string('title', 255);
+            $table->text('content');
+            $table->string('description', 255);
+            $table->string('keyword', 255);
+            $table->string('preview', 255);//anh dai dien
+            $table->integer('category_id');
+            $table->integer('user_id');
+            /*END*/
+
+            /*DONG HO && XE DAP*/
+            $table->string('title', 255);
+            $table->text('content');
+            $table->integer('user_id');
+            $table->integer('quantity');
+            $table->float('price');
+            $table->integer('discount');
+            $table->integer('sell_count');
+            /*END DONG HO XE DAP*/
             $table->timestamps();
         });
     }
