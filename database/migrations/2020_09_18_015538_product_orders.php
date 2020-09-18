@@ -14,7 +14,7 @@ class ProductOrders extends Migration
     public function up()
     {
         //
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('product_orders', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('quantity');
             $table->float('price');
@@ -32,5 +32,6 @@ class ProductOrders extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('product_orders');
     }
 }
