@@ -21,17 +21,17 @@ class CreateTableOrders extends Migration
             $table->string('address', 220)->nullable();
             $table->string('phone', 10)->nullable();
             $table->string('receiver_name', 50)->nullable();
-            $table->tinyint('is_default')->default(1);//1 is default, 0 is in this table
+            $table->tinyInteger('is_default')->default(1);//1 is default, 0 is in this table
             $table->float('total_price');
             //0 - pending,
             // 1 - đã giao,
             // 2- đang giao,
             // 3- đã nhận,
             // 4- đã huỷ
-            $table->tinyint('status')->default(0);
+            $table->tinyInteger('status')->default(0);
             $table->text('note', 500);//ghi chu tu nguoi dung
-            $table->tinyint('payment_method')->default(0); //0-COD, 1-stripe
-            $table->timestamp();
+            $table->tinyInteger('payment_method')->default(0); //0-COD, 1-stripe
+            $table->timestamps();
         });
     }
 

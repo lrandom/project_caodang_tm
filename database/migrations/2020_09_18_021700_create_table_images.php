@@ -17,9 +17,9 @@ class CreateTableImages extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
             $table->string('path', 200);
-            $table->integer('product_id', 200);
-            $table->tinyint('is_preview')->default(0);//0 0 phai anh dai dien, 1 la anh dd
-            $table->timestamp();
+            $table->integer('product_id');
+            $table->tinyInteger('is_preview')->default(0);//0 0 phai anh dai dien, 1 la anh dd
+            $table->timestamps();
         });
     }
 
