@@ -14,6 +14,13 @@ class CategoryProducts extends Migration
     public function up()
     {
         //
+        Schema::create('category_products', function (Blueprint $table) {
+            $table->increments('id');
+            $table->tinyint('type');//phan loai danh muc
+            $table->integer('category_id');
+            $table->integer('product_id');
+            $table->timestamp();
+        });
     }
 
     /**
