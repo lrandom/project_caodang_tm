@@ -55,6 +55,8 @@ class CreateProductsTable extends Migration
             $table->integer('discount');
             $table->integer('sell_count');
             /*END DONG HO XE DAP*/
+
+
             $table->timestamps();
         });
     }
