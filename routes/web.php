@@ -17,4 +17,8 @@ Route::get('/welcome', function () {
 
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', 'DashboardController@index');
+    Route::prefix('users')->group(function () {
+        Route::get('/add', 'Admin\UserController@add');
+        Route::post('/add', 'Admin\UserController@add');
+    });
 });
