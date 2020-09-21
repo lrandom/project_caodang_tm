@@ -1,37 +1,55 @@
 @extends('layouts.admin')
+@section('header')
+    Users
+@endsection
 @section('content')
     <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title">Quick Example</h3>
+            <h3 class="card-title">Add</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
         <form role="form">
             <div class="card-body">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <label>Email address</label>
+                    <input type="email" name="email" class="form-control">
                 </div>
+
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <label>Phone</label>
+                    <input type="phone" name="phone" class="form-control">
                 </div>
+
                 <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <div class="input-group">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="exampleInputFile">
-                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                        </div>
-                        <div class="input-group-append">
-                            <span class="input-group-text" id="">Upload</span>
-                        </div>
-                    </div>
+                    <label>Username</label>
+                    <input type="text" name="name" class="form-control">
                 </div>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+
+                <div class="form-group">
+                    <label>Fullname</label>
+                    <input type="text" name="fullname" class="form-control">
                 </div>
+
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" name="address" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Level</label>
+                    <select class="form-control" name="level">
+                        <option value="0">Admin</option>
+                        <option value="1">Staff</option>
+                        <option value="2">Customer</option>
+                    </select>
+                </div>
+
             </div>
             <!-- /.card-body -->
 
