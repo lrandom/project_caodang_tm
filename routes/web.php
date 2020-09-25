@@ -20,6 +20,7 @@ Route::prefix('admin')->group(function () {
     Route::prefix('users')->group(function () {
         Route::get('/add', 'Admin\UserController@add');
         Route::post('/add', 'Admin\UserController@add');
-        Route::get('/index','Admin\UserController@index');
+        Route::get('/','Admin\UserController@index');
+        Route::get('/delete','Admin\UserController@delete');
     });
 });

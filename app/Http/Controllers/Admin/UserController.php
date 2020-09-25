@@ -41,4 +41,13 @@ class UserController extends Controller
 
         return view('admin.users.add');
     }
+
+    function delete(Request $request){
+       $id = $request->id;
+       $user = User::find($id); //tìm user có id truyền vào
+       if($user!=null){
+         $user->delete();
+       }
+       return redirect('admin/users');
+    }
 }

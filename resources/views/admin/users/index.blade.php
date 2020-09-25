@@ -18,6 +18,9 @@
             <th>Address</th>
             <th>Email</th>
             <th>Phone</th>
+            <th>
+              Thao tác
+            </th>
           </tr>
         </thead>
   
@@ -30,6 +33,10 @@
                 <td>{{$r->address}}</td>
                 <td>{{$r->email}}</td>
                 <td>{{$r->phone}}</td>
+                <td>
+                  <a href="users/delete?id={{$r->id}}">Xoá</a>
+                  <a href="users/edit?id={{$r->id}}">Sửa</a>
+                </td>
               </tr>
               @endforeach
         </tbody>
