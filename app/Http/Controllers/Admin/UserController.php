@@ -11,7 +11,8 @@ class UserController extends Controller
 {
     function index(){
         $data = User::paginate(15); //phan trang
-        return view('admin.users.index',$data);
+        //return view('admin.users.index',$data);
+        return view('admin.users.index',['data'=>$data]);
     }
     //
     function add(Request $request)
