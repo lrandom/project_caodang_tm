@@ -13,8 +13,6 @@ class UserController extends Controller
     function add(Request $request)
     {
         if ($request->isMethod('post')) {
-            //echo 'test';
-            //exit();
             $username = $request->name;
             $fullname = $request->fullname;
             $address = $request->address;
