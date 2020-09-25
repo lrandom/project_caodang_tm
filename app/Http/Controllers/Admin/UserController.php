@@ -35,6 +35,7 @@ class UserController extends Controller
             $user->password = Hash::make($password);
             $user->save(); //save user vào csdl mysql
         }
+        
         return view('admin.users.add');
     }
 }
