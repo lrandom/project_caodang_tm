@@ -9,6 +9,10 @@ use Hash;
 
 class UserController extends Controller
 {
+    function index(){
+        $data = User::paginate(15); //phan trang
+        return view('admin.users.index',$data);
+    }
     //
     function add(Request $request)
     {
@@ -33,7 +37,7 @@ class UserController extends Controller
             $user->password = Hash::make($password);
             $user->save(); //save user vào csdl mysql
         }
-        
+
         return view('admin.users.add');
     }
 }
