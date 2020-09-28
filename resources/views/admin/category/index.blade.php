@@ -13,11 +13,8 @@
         <thead>                  
           <tr>
             <th style="width: 10px">#</th>
-            <th>Username</th>
-            <th>Fullname</th>
-            <th>Address</th>
-            <th>Email</th>
-            <th>Phone</th>
+            <th>Name</th>
+            <th>Parent Id</th>
             <th>
               Thao tác
             </th>
@@ -29,13 +26,10 @@
               <tr>
                 <td>{{$r->id}}</td>
                 <td>{{$r->name}}</td>
-                <td>{{$r->fullname}}</td>
-                <td>{{$r->address}}</td>
-                <td>{{$r->email}}</td>
-                <td>{{$r->phone}}</td>
+                <td>{{$r->parent['name']}}</td>
                 <td>
-                  <a href="{{url('users/delete?id='.$r->id)}}">Xoá</a>
-                  <a href="{{url('users/edit?id='.$r->id)}}">Sửa</a>
+                  <a href="{{url('admin/category/delete?id='.$r->id)}}">Xoá</a>
+                  <a href="{{url('admin/category/edit?id ='.$r->id)}}">Sửa</a>
                 </td>
               </tr>
               @endforeach

@@ -23,4 +23,10 @@ Route::prefix('admin')->group(function () {
         Route::get('/','Admin\UserController@index');
         Route::get('/delete','Admin\UserController@delete');
     });
+    Route::prefix('category')->group(function(){
+        Route::get('/add', 'Admin\CategoryController@add');
+        Route::post('/add', 'Admin\CategoryController@add');
+        Route::get('/','Admin\CategoryController@index');
+        Route::get('/delete','Admin\CategoryController@delete');
+    });
 });
