@@ -34,8 +34,8 @@
                 <td>{{$r->email}}</td>
                 <td>{{$r->phone}}</td>
                 <td>
-                  <a href="{{url('users/delete?id='.$r->id)}}">Xoá</a>
-                  <a href="{{url('users/edit?id='.$r->id)}}">Sửa</a>
+                  <a href="{{url('admin/users/delete?id='.$r->id)}}">Xoá</a>
+                  <a href="{{url('admin/users/edit?id='.$r->id)}}">Sửa</a>
                 </td>
               </tr>
               @endforeach

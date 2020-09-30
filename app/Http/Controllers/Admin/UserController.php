@@ -50,4 +50,36 @@ class UserController extends Controller
        }
        return redirect('admin/users');
     }
+
+    function edit(Request $request){
+        $id  = $request->id;
+
+        if($request->isMethod('POST')){
+            //cập nhật bản ghi
+            $user = User::find($id);
+            $username = $request->name;
+            $fullname = $request->fullname;
+            $address = $request->address;
+            $phone = $request->phone;
+            $email = $request->email;
+            $password = $request->password;
+            $level = $request->level;
+
+            //tạo mới một đối tượng user
+            $user->fullname = $fullname;
+            $user->address = $address;
+            $user->phone = $phone;
+            $user->level = $level;
+            $user->email = $email;
+            $user->name = $username;
+            $user->avatar = 'assets/imgs/profile.png';
+            $user->password = Hash::make($password);
+            $user->save(); //save user vào csdl mysql
+        }
+
+        if(is_numeric($id)){
+            $user = User::find($id);
+        }
+        return view('admin.users.edit',['user'=>$user]);
+    }
 }
