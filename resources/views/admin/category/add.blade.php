@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('header')
-    Users
+    Category
 @endsection
 @section('content')
     <div class="card card-primary">
@@ -15,7 +15,7 @@
         
 
                 <div class="form-group">
-                    <label>Username</label>
+                    <label>Name</label>
                     <input type="text" name="name" class="form-control">
                 </div>
 

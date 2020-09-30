@@ -32,6 +32,25 @@ class CategoryController extends Controller
         return view('admin.category.add',['parentCategory'=>$data]);
     }
 
+    function edit(Request $request){
+        $id  = $request->id;
+
+        if($request->isMethod('POST')){
+            //cập nhật bản ghi
+            $category = Category::find($id);
+            //dd($request->parent_id);
+            $category->name = $request->name;
+            $category->parent_id = $request->parent_id;
+            $category->save();
+        }
+
+        if(is_numeric($id)){
+            $category = Category::find($id);
+        }
+        $data = Category::where('id','!=',$id)->get();
+        return view('admin.category.edit',['category'=>$category,'parentCategory'=>$data]);
+    }
+
     function delete(Request $request){
        $id = $request->id;
        $user = Category::find($id); //tìm user có id truyền vào
