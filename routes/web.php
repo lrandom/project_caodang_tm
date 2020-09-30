@@ -33,4 +33,13 @@ Route::prefix('admin')->group(function () {
         Route::get('/','Admin\CategoryController@index');
         Route::get('/delete','Admin\CategoryController@delete');
     });
+
+    Route::prefix('products')->group(function(){
+        Route::get('/add', 'Admin\ProductController@add');
+        Route::post('/add', 'Admin\ProductController@add');
+        Route::get('/edit','Admin\ProductController@edit');
+        Route::post('/edit','Admin\ProductController@edit');
+        Route::get('/','Admin\ProductController@index');
+        Route::get('/delete','Admin\ProductController@delete');
+    });
 });
