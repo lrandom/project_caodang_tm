@@ -1,0 +1,361 @@
+/*------------------------------------------------------------------
+
+Project:	A Future HTML UI Kit
+Version:	1.0.0
+Author: 	webstrot 
+
+------------------------------------------------------------------
+[Table of contents]
+ 
+1. main_wrapper start
+2. main_wrapper_text start
+3. main_wrapper_content start
+4. main_wrapper_404_heading start
+5. main_wrapper_search_box start
+6. main_wrapper_social_icons start
+
+*/
+
+
+/* body */
+
+body {
+	font-family: 'Roboto';
+    height: 100%;
+    min-height: 100%;
+    background-size: 100% 100%;
+    margin: 0;
+    overflow: hidden;
+}
+.bg-overlay {
+	background: url(../images/coming-soon/coming-soon-img-1/main_wrapper_bg.jpg) repeat;
+	height: 100%;
+	left: 0;
+	top: 0;
+	width: 100%;
+	position:absolute;
+}
+
+/*======================== main_wrapper ========================*/
+
+body > .main_wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	min-height:600px;
+	z-index: 1;
+}
+
+
+/*======================== main_wrapper_text ========================*/
+
+.main_wrapper_text {
+	color: #FFFFFF;
+	display: block;
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	-moz-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	text-align: center;
+}
+.main_wrapper_logo{
+	float:left;
+	width:100%;
+}
+.main_wrapper_heading{
+	float: left;
+    width: 100%;
+	padding-top:50px;
+	padding-bottom:50px;
+}
+.main_wrapper_heading h2{
+	color:#111;
+	font-size:30px;
+	text-transform:uppercase;
+	letter-spacing:2px;
+}
+.main_wrapper_timer_section{
+	float:left;
+	width:100%;
+	background:#4285f4;
+	padding:30px 0px;
+}
+#main_wrapper_clock{
+	color: #fff;
+	display: inline-block;
+	font-weight: 100;
+	text-align: center;
+	font-size: 70px;
+}
+#main_wrapper_clock > div{
+	padding: 0px;
+	border-radius: 10px;
+	background: transparent;
+	display: inline-block;
+	position:relative;
+}
+#main_wrapper_clock div > span{
+    padding: 0px;
+	font-size:100px;
+	padding:0px 50px;
+    display: inline-block;
+}
+#main_wrapper_clock div > span:after{
+    content: ":";
+    position: absolute;
+    top: 0;
+    right:-13px;
+    z-index: 0;
+}
+#main_wrapper_clock > div:last-child span:after{
+	display:none
+}
+.smalltext{
+	padding-top: 15px;
+	font-size: 16px;
+	font-weight: 400;
+	text-transform:uppercase;
+	letter-spacing:2px;
+}
+.main_wrapper_contact_form{
+	float: left;
+	width:100%;
+	padding-top:50px;
+}
+.main_wrapper_contact_form h4 {
+    font-size:20px;
+	color:#222;
+	font-weight:500;
+	text-transform:uppercase;
+	margin-bottom:50px;
+	letter-spacing:2px;
+}
+.main_wrapper_contact_form h4:after {
+    content: "";
+    background: #4285f4;
+    width: 40px;
+    display: block;
+    border: 2px solid #4285f4;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    margin-left: -25px;
+    margin-top: 10px;
+}
+.main_wrapper_contact_form .form-control {
+	height:40px;
+	background-color: #fff;
+	border: 1px solid #4285f4;
+	color:#999;
+	padding: 0px 30px 0px 15px;
+	display:inline-block;
+	-webkit-transition: all 0.3s ease 0s;
+   -moz-transition: all 0.3s ease 0s;
+   -o-transition: all 0.3s ease 0s;
+   transition: all 0.3s ease 0s;
+}
+.main_wrapper_contact_form input::placeholder{
+  color: #999;
+}
+.main_wrapper_contact_form .form-control:focus {
+	color: #999;
+	background-color: #fff;
+	border: 1px solid #4285f4 !important;	
+}
+.main_wrapper_contact_form button.btn{
+	display: block;
+    padding: 10px 20px;
+    font-weight: 400;
+	text-transform:uppercase;
+	background:#4285f4;
+	border:1px solid #4285f4;
+    -webkit-transition: all 0.3s ease 0s;
+   -moz-transition: all 0.3s ease 0s;
+   -o-transition: all 0.3s ease 0s;
+   transition: all 0.3s ease 0s;
+}
+.main_wrapper_contact_form .btn-primary.focus,
+.main_wrapper_contact_form .btn-primary:hover{
+	background-color: transparent;
+  	color: #4285f4;
+  	border: 1px solid #4285f4 !important;
+}
+.main_wrapper_contact_form .form-n,
+.main_wrapper_contact_form .form-e{
+	display: inline-block;
+	width:400px;
+	margin-right:20px;
+	position: relative;
+}
+.main_wrapper_contact_form .form-button{
+	display: inline-block;
+}
+.main_wrapper_contact_form .form-group.i-name:after, 
+.main_wrapper_contact_form .form-group.i-email:after {
+    position: absolute;
+    top: 10px;
+    font-size: 14px;
+    font-family: "FontAwesome";
+    color: #999;
+}
+.main_wrapper_contact_form .form-group.i-name:after{
+	content: "\f007";
+	right: 14px;
+}
+.main_wrapper_contact_form .form-group.i-email:after{
+	content: "\f0e0";
+	right: 14px;
+}
+
+/*======================== main_wrapper_social_icons ========================*/
+
+.main_wrapper_social_icons{
+	float:left;
+	width:100%;
+	padding-top: 30px;
+}
+.main_wrapper_social_icons ul{
+	display:inline-block;
+}
+.main_wrapper_social_icons li {
+    float: left;
+    margin-right: 10px;
+}
+.main_wrapper_social_icons li a{
+   font-size:20px;
+   color:#424244;
+}
+.main_wrapper_social_icons li a:hover{
+   color:#4285f4;
+}
+
+
+
+
+
+/* media query css for ipad end */
+
+
+/* media  query css for ipad */
+
+
+
+@media(min-width: 767px) and (max-width: 991px) {
+
+	.main_wrapper_contact_form button.btn{
+		display: inline-block;
+	}
+	#main_wrapper_clock div > span {
+		padding: 0px 40px;
+		font-size: 80px;
+	}
+	.smalltext {
+		padding-top: 0px;
+		font-size: 14px;
+	}
+
+}
+
+/* media query css for ipad end */
+
+
+/* media query css for mobile */
+
+@media(max-width: 767px){
+	
+	.main_wrapper_img{
+		float: left;
+		width:100%;
+	}
+	.main_wrapper_heading h2 {
+		font-size: 24px;
+	}
+	.main_wrapper_contact_form button.btn {
+		display: inline-block;
+	}
+	.main_wrapper_contact_form .form-button {
+		float:left;
+		width:100%;
+	}
+	#main_wrapper_clock div > span {
+		padding: 0px 10px;
+		font-size: 60px;
+	}
+	#main_wrapper_clock div > span:after {
+		top: 17px;
+	}
+	.smalltext {
+		padding-top: 0px;
+		font-size: 14px;
+	}
+}
+
+@media(max-width: 480px){
+	
+	.main_wrapper_heading h2 {
+		font-size: 18px;
+	}
+	#main_wrapper_clock div > span {
+		font-size: 30px;
+	}
+	#main_wrapper_clock div > span {
+		padding: 0px 25px;
+	}
+	#main_wrapper_clock {
+		font-size: 50px;
+	}
+	#main_wrapper_clock div > span:after {
+		top: 20px;
+	}
+	.smalltext {
+		font-size: 13px;
+	}
+	.main_wrapper_contact_form .form-e {
+		width: 240px;
+	}
+	.main_wrapper_heading {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	.main_wrapper_contact_form {
+		padding-top: 30px;
+	}
+	
+}
+
+@media(max-width: 390px){
+	
+	#main_wrapper_clock div > span {
+		padding: 0px 15px;
+	}
+	#main_wrapper_clock div > span:after{
+		top:20px;
+	}
+	#main_wrapper_clock {
+		font-size: 50px;
+	}
+	
+}
+
+@media(max-width: 320px){
+	
+	#main_wrapper_clock div > span {
+		padding: 0px 7px;
+	}
+	.smalltext {
+		font-size: 12px;
+	}
+	.main_wrapper_contact_form h4 {
+		margin-bottom: 35px;
+	}
+	
+}
+
+
+

@@ -1,0 +1,41 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 21/02/2019 08:37
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/sport_font/Flaticon.eot");
+  src: url("../fonts/sport_font/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/sport_font/Flaticon.woff2") format("woff2"),
+       url("../fonts/sport_font/Flaticon.woff") format("woff"),
+       url("../fonts/sport_font/Flaticon.ttf") format("truetype"),
+       url("../fonts/sport_font/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-shirt:before { content: "\f100"; }
+.flaticon-ball:before { content: "\f101"; }
+.flaticon-shopping-cart:before { content: "\f102"; }
+.flaticon-best-seller:before { content: "\f103"; }
+.flaticon-call:before { content: "\f104"; }
+.flaticon-help:before { content: "\f105"; }
+.flaticon-coin:before { content: "\f106"; }
+.flaticon-delivery:before { content: "\f107"; }
+.flaticon-top-games-star:before { content: "\f108"; }

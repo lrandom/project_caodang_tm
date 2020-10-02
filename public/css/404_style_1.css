@@ -1,0 +1,150 @@
+/*------------------------------------------------------------------
+
+Project:	A Future HTML UI Kit
+Version:	1.0.0
+Author: 	webstrot 
+
+------------------------------------------------------------------
+[Table of contents]
+ 
+1. main_wrapper start
+
+*/
+
+
+/* main_wrapper start*/
+
+.main_wrapper
+{
+	width:100%;
+	float:left;
+	padding-top:100px;
+	padding-bottom:100px;
+}
+.main_wrapper_heading{
+	float:left;
+	width:100%;
+	padding-top: 100px;
+}
+.main_wrapper_heading h2{
+	font-size:100px;
+	color:#4285f4;
+	font-weight:700;
+}
+.main_wrapper_content{
+	float:left;
+	width:100%;
+	position:relative;
+}
+.main_wrapper_content:after{
+	content:'';
+	border:1px solid #4285f4;
+	height:315px;
+	position:absolute;
+	top:0;
+	left:-72px;
+}
+.main_wrapper_content img{
+	margin-bottom:30px;
+}
+.main_wrapper_content h2{
+	font-size:24px;
+	color:#111;
+	font-weight:500;
+	margin-bottom:10px;
+}
+.main_wrapper_content h3{
+	font-size:24px;
+	color:#4285f4;
+	font-weight:300;
+	margin-bottom:30px;
+}
+.main_wrapper_content p{
+	font-size:16px;
+	margin-bottom:30px;
+}
+.main_wrapper_content a{
+	float:left;
+	width:180px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	background:#4285f4;
+	color:#fff;
+	border-radius:3px;
+	text-transform:uppercase;
+}
+.main_wrapper_content a:hover{
+	background:#194690;
+	-webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+/* main_wrapper end*/
+
+
+/* media  query css for ipad */
+
+@media(max-width: 1200px) {
+	
+	.main_wrapper_content:after {
+		content: '';
+		border: 1px solid #4285f4;
+		height: 315px;
+		position: absolute;
+		top: 0;
+		left: -42px;
+	}
+}
+
+@media(min-width: 767px) and (max-width: 991px) {
+
+	.main_wrapper{
+		text-align:center;
+	}
+	.main_wrapper_content:after {
+		display:none;
+	}
+	.main_wrapper_content img{
+		display:inline-block;
+	}
+	.main_wrapper_content a{
+		float:none;
+		display:inline-block;
+	}
+	.main_wrapper_heading {
+		padding-bottom:30px;
+	}
+	
+}
+
+/* media query css for ipad end */
+
+
+/* media query css for mobile */
+
+@media(max-width: 767px){
+	
+	.main_wrapper{
+		text-align:center;
+	}
+	.main_wrapper_content:after {
+		display:none;
+	}
+	.main_wrapper_content img{
+		display:inline-block;
+	}
+	.main_wrapper_content a{
+		float:none;
+		display:inline-block;
+	}
+	.main_wrapper_heading {
+		padding-bottom:30px;
+	}
+	
+}
+
+/* media query css for mobile end */

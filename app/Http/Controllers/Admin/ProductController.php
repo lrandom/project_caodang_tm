@@ -41,7 +41,6 @@ class ProductController extends Controller
             //upload file
             for ($i = 0; $i < 4; $i++) {
                 if ($request->hasFile('file_'.($i + 1))) {
-                    //echo 'test'; exit();
                     $file = $request->file('file_'.($i + 1));
                     $fileExtension = $file->getClientOriginalExtension(); //lấy đuôi file
                     $fileName = time().$i.'.'.$fileExtension;

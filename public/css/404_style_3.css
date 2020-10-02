@@ -1,0 +1,202 @@
+/*------------------------------------------------------------------
+
+Project:	A Future HTML UI Kit
+Version:	1.0.0
+Author: 	webstrot 
+
+------------------------------------------------------------------
+[Table of contents]
+ 
+1. main_wrapper start
+
+*/
+
+
+/* main_wrapper start*/
+
+.main_wrapper_three{
+	width:100%;
+	float:left;
+	padding-top:100px;
+	padding-bottom:100px;
+}
+.main_wrapper_three_img{
+	float:left;
+	width:100%;
+	position:relative;
+}
+.main_wrapper_three_img img{
+	-webkit-animation: fa-spin 10s infinite linear;
+    animation: fa-spin 10s infinite linear;
+}
+.wheel_img_one_wrapper{
+	position:absolute;
+	left:0;
+}
+.wheel_img_two_wrapper{
+	position: absolute;
+	left: 170px;
+    top: 111px;
+}
+.wheel_img_three_wrapper{
+	position: absolute;
+   left: 0;
+    top: 217px;
+}
+.main_wrapper_three_content{
+	float:left;
+	width:100%;
+}
+.main_wrapper_three_content span{
+	font-size:200px;
+	color:#4285f4;
+	font-weight:900;
+}
+.main_wrapper_three_content h2 span:first-child{
+	text-shadow: -15px 0px 5px #e5e5e5;
+    position: relative;
+    z-index: 1;
+}
+.main_wrapper_three_content h2 span:nth-child(2){
+	color: #111;
+    margin-left: -24px;
+    z-index: 1;
+    position: relative;
+}
+.main_wrapper_three_content h2 span:last-child{
+	margin-left: -30px;
+    z-index: 1;
+    text-shadow: 7px 10px 5px #e5e5e5;
+    position: relative;
+}
+.main_wrapper_three_content h3{
+	font-size:30px;
+	color:#111;
+	font-weight:500;
+	text-transform:uppercase;
+	position:relative;
+	margin-bottom:40px;
+}
+.main_wrapper_three_content h3:after{
+	content: '';
+    border: 2px solid #4285f4;
+	border-radius:5px;
+    display: block;
+    width: 40px;
+    position: absolute;
+    margin-top:10px;
+	margin-bottom:10px;
+}
+.main_wrapper_three_content p{
+	font-size:16px;
+	margin-bottom:30px;
+}
+.main_wrapper_three_content a{
+	color:#4285f4;
+}
+.main_wrapper_three_email input {
+    width: 93%;
+    height: 46px;
+    color: rgb(101, 101, 101);
+    font-size: 14px;
+    background: #fafafa;
+    border: 1px solid #fafafa ;
+    padding: 17px 30px 17px 14px;
+}
+.main_wrapper_three_email input:focus{
+    outline: none;
+}
+.main_wrapper_three_email i {
+    margin-left: -25px;
+    color: #4285f4;
+}
+
+/* main_wrapper end*/
+
+
+/* media  query css for ipad */
+
+@media(max-width: 1200px) {
+	
+	.main_wrapper_three_content span {
+		font-size: 150px;
+	}
+	.main_wrapper_three_content h3 {
+		font-size: 24px;
+	}
+}
+
+@media(min-width: 767px) and (max-width: 991px) {
+
+	.main_wrapper_three_content h3 {
+		font-size: 18px;
+	}
+
+}
+
+/* media query css for ipad end */
+
+
+/* media query css for mobile */
+
+@media(max-width: 767px){
+	
+	.main_wrapper{
+		text-align:center;
+	}
+	.main_wrapper_three_content h3 {
+		font-size: 24px;
+	}
+	.main_wrapper_three_content h3 {
+		display: inline-block;
+	}
+	.main_wrapper_three_content h2 span:last-child {
+		z-index: 0;
+	}
+	.main_wrapper_three_img {
+		float: left;
+		width: 100%;
+		min-height:440px;
+		text-align:center;
+	}
+	.main_wrapper_three_content h3 {
+		font-size: 18px;
+	}
+	
+}
+
+@media(max-width: 480px){
+	
+	.main_wrapper_three_content h3 {
+		font-size: 18px;
+	}
+	.main_wrapper_three_img {
+		float: left;
+		width: 100%;
+		min-height: 208px;
+		text-align: center;
+	}
+	.wheel_img_one_wrapper {
+		width: 100px;
+	}
+	.wheel_img_two_wrapper {
+		position: absolute;
+		left: 86px;
+		top: 57px;
+		width: 100px;
+	}
+	.wheel_img_three_wrapper {
+		position: absolute;
+		left: 0;
+		top: 117px;
+		width: 100px;
+	}	
+}
+
+@media (max-width: 390px){
+	
+	.main_wrapper_three_content h3 {
+		font-size: 15px;
+	}
+	
+}

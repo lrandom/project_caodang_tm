@@ -1,0 +1,309 @@
+/*------------------------------------------------------------------
+
+Project:	A Future HTML UI Kit
+Version:	1.0.0
+Author: 	webstrot 
+
+------------------------------------------------------------------
+[Table of contents]
+ 
+1. body
+2. portfolio_section start 
+
+*/
+
+
+/* custom css */
+
+body, html{
+	overflow-x:hidden;
+}
+a:focus {
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: unset;
+	text-decoration:none;
+	color:#111111;
+}
+
+/* custom css end*/
+
+
+/*****------ portfolio_section start ---------********/
+
+.port_menu_wrapper{
+	float:left;
+	width:100%;
+	padding-top:100px;
+	padding-bottom:100px;
+	text-align:center;
+	overflow:hidden;
+	background:#f7f7f7;
+}
+
+.port_menu_wrapper .text_wrapper_heading h3{
+	font-size:12px;
+	font-weight:bold;
+	text-transform:uppercase;
+	color:#999;
+	padding-bottom:20px;
+}
+.port_menu_wrapper .text_wrapper_heading h2{
+	font-size:30px;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+.portfolio-area{
+	float:left;
+	width:100%;
+}
+.portfolio-area .portfolio-area-intro{
+    margin-bottom: 50px;
+}
+.portfolio-area .portfolio-area-intro p span,
+.portfolio-area .portfolio-area-intro h2 {
+    text-transform: uppercase;
+}
+.portfolio-area .portfolio-area-intro h2 {
+    font-weight: 600;
+}
+.portfolio-area .portfolio-thumb{
+    position: relative;
+    overflow: hidden;
+	margin-top:30px;
+}
+.portfolio-area .portfolio-thumb img{
+    width: 100%;
+}
+.gc_filter_cont_overlay_wrapper {
+  position: relative;
+  width:auto;
+  visibility:visible;
+}
+.gc_filter_cont_overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    background: rgba(26, 26, 26, 0.65);
+}
+.portfolio-thumb:hover .gc_filter_cont_overlay {
+  opacity:1;
+  -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+	overflow:hidden;
+	visibility:visible;
+}
+.gc_filter_cont_overlay i{
+	color:#000000;
+	width:50px;
+	height:50px;
+	background:#ffffff;
+	text-align:center;
+	line-height:50px;
+	border-radius:100%;
+	font-size:18px;
+}
+.gc_filter_cont_overlay_wrapper:hover .gc_filter_cont_overlay i{
+	color:#000000;
+	opacity:1;
+}
+.gc_filter_text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+/*portfolio-filter*/
+
+.portfolio-filter {
+    margin-bottom: 30px;
+}
+#filter li a{
+    display: block;
+    font-size: 16px;
+    cursor: pointer;
+	color:#202020;
+	background:transparent;
+    padding: 10px 20px;
+    margin-right: 10px;
+	font-weight:400;
+	text-transform:capitalize;
+    border:1px solid #eaeaeb;
+	position:relative;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+}
+#filter li a:hover,
+#filter li a.active{
+	color:white;
+    background:#4285f4;
+	 border:1px solid #4285f4;
+}
+#filter li a:last-child{
+    margin-right: 0px;
+}
+.tab_image_text {
+	float:left;
+	width:100%;
+    border: 1px solid #e1e1e1;
+	padding:30px;
+	border-top: none;
+	background:white;
+}
+.project_category{
+	float:left;
+}	
+.project_likes{
+	float:right;
+}
+.project_category h4 a{
+	color:#999999;
+	font-size:14px;
+	text-transform:capitalize;
+}
+.project_title h4{
+	font-size:18px;
+	font-weight:bold;
+	text-align:left;
+	text-transform:capitalize;
+}
+.project_title h4 a{
+	color:#111111;
+}
+.project_title{
+	padding-bottom:20px;
+	display:block;
+}
+.project_likes a {
+	color:#4285f4;
+	font-size:16px;	
+	color:#000;
+}
+.project_likes a i{
+	color:#4285f4;
+}
+.gc_filter_cont_overlay_wrapper {
+  position: relative;
+  width:auto;
+  visibility:visible;
+}
+.gc_filter_cont_overlay {
+      width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    background: rgba(26, 26, 26, 0.65);
+}
+.portfolio-thumb:hover .gc_filter_cont_overlay {
+  opacity:1;
+  -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+	overflow:hidden;
+	visibility:visible;
+}
+.gc_filter_cont_overlay_wrapper:hover .tab_image_text {
+    border: 1px solid #4285f4;
+	background:#4285f4;
+	border-top: none;
+	-webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.gc_filter_cont_overlay_wrapper:hover .project_title h4 a{
+	color:#fff;
+	-webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.gc_filter_cont_overlay_wrapper:hover .project_category h4 a{
+	color:#fff;
+	-webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.gc_filter_cont_overlay_wrapper:hover .project_likes a{
+	color:#fff;
+	-webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.gc_filter_cont_overlay_wrapper:hover .project_likes a i{
+	color:#fff;
+	-webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.gc_filter_cont_overlay_wrapper figure{
+	display:block;
+	margin:0;
+	overflow:hidden
+}
+.gc_filter_cont_overlay_wrapper figure img{
+	width:100%;
+	display:block;
+	transition:all 0.3s
+}
+.gc_filter_cont_overlay_wrapper:hover figure img {
+    transform: scale(1.1, 1.1);
+}
+ .gc_filter_cont_overlay_wrapper:hover .gc_filter_cont_overlay i{
+	 color:#4285f4;
+	 opacity:1;
+ }
+
+ 
+@media (max-width: 991px){
+	.tab_image_text{
+		text-align:left;
+	}
+}
+@media (max-width: 767px){
+	.project_title{
+		display:block;
+	}
+	.tab_image_text{
+		text-align:left;
+	}
+}
+@media screen and (max-width: 320px) {
+	.tab_image_text{
+		text-align:left;
+	}
+}
+@media  screen and (max-width: 480px){
+	.tab_image_text{
+		text-align:left;
+	}
+}

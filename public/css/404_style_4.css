@@ -1,0 +1,228 @@
+/*------------------------------------------------------------------
+
+Project:	A Future HTML UI Kit
+Version:	1.0.0
+Author: 	webstrot 
+
+------------------------------------------------------------------
+[Table of contents]
+ 
+1. main_wrapper start
+2. main_wrapper_text start
+3. main_wrapper_content start
+4. main_wrapper_404_heading start
+5. main_wrapper_search_box start
+6. main_wrapper_social_icons start
+
+*/
+
+
+/* body */
+
+body {
+	font-family: 'Roboto';
+	font-weight: normal;
+	font-size: 16px;
+	word-spacing: normal;
+	height: 100%;
+	min-height: 100%;
+	color: #333;
+	background-size: 100% 100%;
+	margin: 0;
+	overflow: hidden;
+	background: url(../images/404/404-img-4/main_wrapper_bg.jpg) repeat;
+}
+.bg-overlay {
+	position:absolute;
+	top:0%;
+	left:0%;
+	right:0%;
+	bottom:0%;
+	background: rgba(0,0,0,0.82);
+}
+body > .main_wrapper:before{
+    content:'';
+	position:absolute;
+	border: 2px solid #54555a;
+	top:20px;
+	left:20px;
+	bottom:20px;
+	right:20px;
+}
+
+/*======================== main_wrapper ========================*/
+
+body > .main_wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	min-height:600px;
+	z-index: 1;
+}
+
+
+/*======================== main_wrapper_text ========================*/
+
+.main_wrapper_text {
+	color: #FFFFFF;
+	display: block;
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	left:20px;
+	right:20px;
+	-moz-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	text-align: center;
+}
+.main_wrapper_logo{
+	float:left;
+	width:100%;
+}
+
+/*======================== main_wrapper_content ========================*/
+
+.main_wrapper_content{
+	float:left;
+	width:100%;
+}
+.main_wrapper_content h2{
+	font-size:30px;
+	color:#fff;
+	padding-top:30px;
+}
+.main_wrapper_content p{
+	font-size:16px;
+	color:#fff;
+	padding-top:30px;
+	padding-bottom:30px;
+}
+.main_wrapper_content a{
+	color:#4285f4;
+}
+
+/*======================== main_wrapper_404_heading ========================*/
+
+.main_wrapper_404_heading{
+	float:left;
+	width:100%;
+	background: rgba(15, 13, 16, 0.45);
+}
+.main_wrapper_404_heading h2{
+	color:#4285f4;
+	font-size:200px;
+	font-weight:700;
+}
+
+/*======================== main_wrapper_search_box ========================*/
+
+.main_wrapper_search_box{
+	float:left;
+	width:100%;
+	padding-top: 30px;
+}
+.main_wrapper_search_box h4{
+	color:#fff;
+	text-transform:uppercase;
+	position:relative;
+	margin-bottom:40px;
+	letter-spacing:2px;
+}
+.main_wrapper_search_box h4:after {
+    content: "";
+    background: #4285f4;
+    width: 40px;
+	display: block;
+    border: 2px solid #4285f4;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    margin-left: -25px;
+	margin-top:10px;
+}
+.main_wrapper_search_box input {
+    width: 50%;
+    height: 46px;
+    color: #fff;
+    font-size: 14px;
+    background: rgba(15, 13, 16, 0.45);
+    border: none;
+    padding: 17px 30px 17px 14px;
+}
+.main_wrapper_search_box input::placeholder{
+  color: #fff;
+}
+.main_wrapper_search_box input:focus{
+    outline: none;
+}
+.main_wrapper_search_box i {
+    margin-left: -25px;
+    color: #4285f4;
+}
+
+/*======================== main_wrapper_social_icons ========================*/
+
+.main_wrapper_social_icons{
+	float:left;
+	width:100%;
+	padding-top: 30px;
+}
+.main_wrapper_social_icons ul{
+	display:inline-block;
+}
+.main_wrapper_social_icons li {
+    float: left;
+    margin-right: 10px;
+}
+.main_wrapper_social_icons li a{
+   font-size:20px;
+   color:#424244;
+}
+.main_wrapper_social_icons li a:hover{
+   color:#4285f4;
+}
+
+
+/* media query css for mobile */
+
+@media(max-width: 767px){
+	
+	.main_wrapper_content h2 {
+		font-size: 24px;
+	}
+	.main_wrapper_content p {
+		font-size: 14px;
+		padding: 20px 42px;
+	}
+	.main_wrapper_404_heading h2 {
+		font-size: 150px;
+	}
+}
+
+@media(max-width: 480px){
+	
+	.main_wrapper_content h2 {
+		font-size: 20px;
+	}
+	.main_wrapper_404_heading h2 {
+		font-size: 100px;
+	}
+	
+}
+
+@media (max-width: 390px){
+	
+	.main_wrapper_content h2 {
+		font-size: 16px;
+	}
+	
+}
+
+
+
+

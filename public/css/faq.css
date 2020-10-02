@@ -1,0 +1,263 @@
+/*------------------------------------------------------------------
+
+Project:	A Future HTML UI Kit
+Version:	1.0.0
+Author: 	webstrot 
+
+------------------------------------------------------------------
+[Table of contents]
+ 
+1. contact_wrapper start
+2. usefull_link_wrapper start
+3. faq_content_wrapper start
+
+
+*/
+
+/* contact_wrapper start*/
+
+.faq_section{
+	float: left;
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.contact_wrapper{
+    float: left;
+    width: 100%;
+	margin-bottom: 100px;
+	padding: 30px 30px;
+    background: #4285f4;
+	position:relative;
+}
+.contact_wrapper:after {
+    content: '';
+    position: absolute;
+    border-left: 0px solid transparent;
+    border-right: 90px solid transparent;
+    border-top: 90px solid #4285f4;
+    right: 0;
+}
+.contact_wrapper h2 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 36px;
+	font-weight:300;
+	line-height:50px;
+}
+.form_wrapper{
+	position: relative;
+}
+.form_wrapper .form-group {
+	margin-bottom: 20px;
+}
+.form_wrapper .form-group ::-webkit-input-placeholder{
+    color: rgba(255, 255, 255, 0.56);
+}
+.form_wrapper .form-group :-moz-placeholder{
+    color: rgba(255, 255, 255, 0.56);
+}
+.form_wrapper .form-group ::-moz-placeholder{
+    color: rgba(255, 255, 255, 0.56);
+}
+.form_wrapper .form-group :-ms-input-placeholder{
+    color: rgba(255, 255, 255, 0.56);
+}
+.form_wrapper textarea{
+	resize:none;
+}
+.form_wrapper .form-control:focus{
+	border: 1px solid #fff !important;
+	background: transparent;	
+}
+.form_wrapper .form-control {	
+	border: 1px solid rgba(255, 255, 255, 0.56);
+	background: transparent;
+	color: #fff;
+	border-radius:0;
+	-webkit-transition: all 0.3s ease 0s;
+   	-moz-transition: all 0.3s ease 0s;
+   	-o-transition: all 0.3s ease 0s;
+   	transition: all 0.3s ease 0s;
+}
+.contact_wrapper button.btn{
+	margin: 0 auto;
+	display: block;
+    padding: 10px 30px;
+    font-weight: 700;
+	margin-top:10px;
+    -webkit-transition: all 0.3s ease 0s;
+   	-moz-transition: all 0.3s ease 0s;
+   	-o-transition: all 0.3s ease 0s;
+   	transition: all 0.3s ease 0s;
+   	 font-weight: normal;
+}
+.contact_wrapper .btn-default {
+	background-color: #fff;
+	color: #111;
+	border: 1px solid #fff;
+	border-radius:30px;
+}
+.contact_wrapper .btn-default:hover,
+.contact_wrapper .btn-default.focus {
+	background-color: transparent;
+  	color: #fff;
+}
+
+/* contact_wrapper end*/
+
+/* usefull_link_wrapper start*/
+
+.usefull_link_wrapper{
+    float: left;
+    width: 100%;
+}
+.usefull_link_wrapper h2 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #111;
+    text-transform: uppercase;
+}
+.usefull_link_wrapper h2:after {
+    display: block;
+    content: "";
+    background: #4285f4;
+    border: 1px solid #4285f4;
+    width: 40px;
+    height: 4px;
+    border-radius: 3px;
+    margin-top: 13px;
+}
+.usefull_link_wrapper ul li{
+	padding: 10px 0px;
+}
+.usefull_link_wrapper ul li a{
+	color:#222222;
+    font-weight: 500;
+}
+.usefull_link_wrapper ul li i{
+	margin-right:30px;
+	color:#999;
+}
+.usefull_link_wrapper ul li:hover a,
+.usefull_link_wrapper ul li:hover i{
+	color:#4285f4;
+}
+
+/* usefull_link_wrapper end*/
+
+/* faq_content_wrapper start*/
+
+.faq_content_wrapper{
+	float: left;
+    width: 100%;
+}
+.faq_content_heading{
+	float: left;
+    width: 100%;
+}
+.faq_content_heading h2{
+	font-size:36px;
+	margin-bottom:30px;
+	padding-left:30px;
+	border-left: 5px solid #4285f4;
+}
+.faq_search_box {
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+	margin-bottom:50px;
+}
+.faq_search_box input {
+    width:100%;
+    height: 46px;
+    font-size: 14px;
+    background: transparent;
+    border: 1px solid #e9e9e9 ;
+    padding: 17px 30px 17px 14px;
+}
+.faq_search_box input::-webkit-input-placeholder{
+    color: #999;
+}
+.faq_search_box input :-moz-placeholder{
+    color: #999;
+}
+.faq_search_box input ::-moz-placeholder{
+    color: #999;
+}
+.faq_search_box input :-ms-input-placeholder{
+   color: #999;
+}
+.faq_search_box input:focus{
+	border: 1px solid #4285f4 !important;
+	background: transparent;
+	outline:0;
+}
+.faq_search_box i {
+    margin-left: -25px;
+    color: #999;
+}
+.faq_question_wrapper{
+	float: left;
+    width: 100%;
+	padding-bottom:40px;
+	margin-bottom:50px;
+	border-bottom:1px solid #e8e8e8;
+}
+.last{
+	padding-bottom:0px;
+	margin-bottom:0px;
+	border-bottom:0;
+}
+.faq_question_wrapper h2{
+	font-size:24px;
+	margin-bottom:30px;
+}
+.faq_question_wrapper h2 a:hover{
+	color:#4285f4;
+}
+.faq_content_btn{
+	float: left;
+    width: 100%;
+	margin-top:50px;
+	text-align:center;
+}
+.faq_content_btn button.btn{
+    width:200px;
+	height:50px;
+	font-size:18px;
+    -webkit-transition: all 0.3s ease 0s;
+   	-moz-transition: all 0.3s ease 0s;
+   	-o-transition: all 0.3s ease 0s;
+   	transition: all 0.3s ease 0s;
+   	 font-weight: normal;
+}
+.faq_content_btn .btn-default {
+	background-color: #4285f4;
+	color: #fff;
+	border: 1px solid #4285f4;
+	border-radius:30px;
+}
+.faq_content_btn .btn-default:hover,
+.faq_content_btn .btn-default.focus {
+	background-color: transparent;
+  	color: #4285f4;
+}
+
+/* faq_content_wrapper end*/
+
+
+@media(max-width: 767px){
+	
+.faq_content_heading h2 {
+    font-size: 30px;
+}	
+.faq_content_wrapper {
+    padding-top: 40px;
+}
+.faq_question_wrapper h2 {
+    line-height: 30px;
+}
+
+}

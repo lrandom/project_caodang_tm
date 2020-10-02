@@ -1,0 +1,263 @@
+/*------------------------------------------------------------------
+
+Project:	A Future HTML UI Kit
+Version:	1.0.0
+Author: 	webstrot 
+
+------------------------------------------------------------------ */
+
+/* custom css start */
+
+.text_wrapper{
+	float:left;
+	width:100%;
+	margin-bottom: 50px;
+	text-align:center;
+}
+.text_wrapper_heading{
+	float:left;
+	width:100%;
+	display: inline-block;
+}
+.text_wrapper_heading h2{
+	font-size:30px;
+	font-weight:700;
+	text-transform:uppercase;
+}
+.text_wrapper_heading h3{
+	font-size:12px;
+	font-weight:700;
+	color:#999999;
+	text-transform:uppercase;
+	padding-bottom:20px;
+}
+.text_wrapper_content p{
+	margin-top:30px;
+	font-size:16px;
+}
+.text_wrapper_content{
+	float:left;
+	width:100%;
+	display: inline-block;
+}
+
+/* custom css end */
+
+
+/* section_2 css */
+
+.section_2{
+	float:left;
+	width:100%;
+	padding-bottom:100px;
+	padding-top:100px;
+}
+.team_members_wrapper{
+	text-align:center;
+	margin-bottom:50px;	
+}
+.team_member_image, .team_member_content{
+	display: inline-block;
+}
+.team_member_image{
+	padding-bottom:38px;
+}
+.team_member_content h5{
+	color:#999;
+	font-size:14px;
+	padding-bottom:10px;
+}
+.team_member_content h4{
+	font-size:20px;
+	font-weight:700;
+	padding-bottom:28px;
+}
+.team_member_content p{
+	font-size:16px;
+	margin-bottom:20px;
+	padding: 0px 12px;
+}
+.team_social_icons{
+	display: inline-block;
+}
+.team_social_icons li{
+	float:left;
+	margin-left:10px;
+}
+.team_social_icons li a{
+	float:left;
+	color: #cbcbcb;
+	font-size:16px;
+	border: 1px solid #e8e8e8;
+	border-radius:50%;
+	height:35px;
+	width:35px;
+	text-align:center;
+	line-height:35px;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	-ms-transition: all .5s;
+	-o-transition: all .5s;
+	transition: all .5s;
+}
+.team_social_icons li a:hover{
+	border: 1px solid #4285f4;
+	background:#4285f4;
+	color:#fff;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	-ms-transition: all .5s;
+	-o-transition: all .5s;
+	transition: all .5s;
+}
+/* section_2 css end*/
+
+
+/* pagination_section start */
+
+.pagination_section{
+	float:left;
+	width:100%;
+	margin-top:50px;
+	text-align:center;
+}
+.pagination_section ul{
+	display:inline-block;
+}
+.pagination_section ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.pagination_section ul li{
+	float:left;
+	margin-left:20px;
+}
+.pagination_section ul li:first-child{
+	margin-left:0px;
+}
+.pagination_section .prev i{
+	margin-right:10px;
+}
+.pagination_section .next i{
+	margin-left:10px;
+}
+.pagination_section ul li a i{
+	font-size:16px;
+}
+.pagination_section .prev{
+	margin-left:0px;
+	border-radius:35px;
+	width:90px;
+	height:34px;
+	line-height:34px;
+}
+.pagination_section .next{
+	border-radius:35px;
+	width:90px;
+	height:34px;
+	line-height:34px;
+}
+.pagination_section ul li a{
+	float:left;
+	color:#4285f4;
+	line-height:30px;
+	height:30px;
+	width:30px;
+	text-align:center;
+	border:1px solid #e0e0e0;
+}
+.pagination_section ul li a:hover{
+	background:#4285f4;
+	color:#fff;
+	border:1px solid #4285f4;
+}
+
+/* pagination_section end */
+
+
+@media(min-width: 992px) and (max-width: 1199px) {
+	
+	.social_icons li {
+		margin-left: 7px;
+	}
+	.social_icons li a {
+		font-size: 13px;
+		height: 30px;
+		width: 30px;
+		line-height: 28px;
+	}
+	.pagination_section ul li {
+		margin-left: 18px;
+	}
+	
+}
+
+@media(min-width: 768px)and (max-width: 991px){
+	
+	.pagination_section .prev{
+		width:70px;
+	}
+	.pagination_section .next{
+		width:70px;
+	}	
+	.pagination_section ul li {
+		margin-left:7px;
+	}
+}
+
+@media(max-width: 767px){
+	
+	.social_icons li {
+		margin-left: 5px;
+	}
+	.social_icons li a {
+		font-size: 14px;
+	}
+	.pagination_section{
+	  margin-bottom:40px;
+	}
+}
+
+@media only screen and (max-width : 480px) {
+	
+
+	.pagination_section .prev{
+		width:60px;
+	}
+	.pagination_section .next{
+		width:60px;
+	}	
+	.pagination_section ul li {
+		margin-left: 6px;
+	}
+}
+
+@media only screen and (max-width : 390px) {
+	
+	.pagination_section .prev i{
+		display:none;
+	}
+	.pagination_section .next i{
+		display:none;
+	}
+	.pagination_section .prev{
+		width:50px;
+	}
+	.pagination_section .next{
+		width:50px;
+	}	
+
+}
+
+@media only screen and (max-width: 360px) {
+	
+	.social_icons li a {
+		font-size: 13px;
+		height: 28px;
+		width: 28px;
+		line-height: 28px;
+	}
+
+
+}
