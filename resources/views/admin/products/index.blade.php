@@ -13,6 +13,7 @@
         <thead>                  
           <tr>
             <th style="width: 10px">#</th>
+            <th>Image</th>
             <th>Title</th>
             <th>Price</th>
             <th>Category</th>
@@ -28,6 +29,11 @@
               @foreach ($data as $r)
               <tr>
                 <td>{{$r->id}}</td>
+                <td>
+                  @if ($r->images!=null && count($r->images)>0)
+                    <img src="{{asset('storage/'.$r->images[0]->path)}}" style="width:100px"/>
+                  @endif
+                </td>
                 <td>{{$r->title}}</td>
                 <td>{{$r->price}}</td>
                 <td>{{$r->category->name}}</td>
