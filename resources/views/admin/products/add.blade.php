@@ -9,7 +9,7 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form role="form" method="post">
+        <form role="form" method="post" enctype="multipart/form-data">
             @csrf
             <div class="card-body">
                 <div class="form-group">
@@ -43,6 +43,13 @@
                     </select>
                 </div>
 
+                <input type="file" name="file_1"/>
+                <br>
+                <input type="file" name="file_2"/>
+                <br>
+                <input type="file" name="file_3"/>
+                <br>
+                <input type="file" name="file_4"/>
             </div>
             <!-- /.card-body -->
 
