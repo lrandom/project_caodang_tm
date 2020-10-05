@@ -9,7 +9,11 @@ class HomeController extends Controller
 {
     //
     function index(){
-    
-        return view('frontends.home');
+        $products = Product::
+        with(['images'=>function($q){
+            $q->where('is_preview',1);
+        }])
+        ->orderBy('id','desc')->paginate(10);
+        return view('frontends.home',['products'=>$products]);
     }
 }

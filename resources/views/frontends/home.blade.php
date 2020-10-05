@@ -33,13 +33,21 @@
         <div class="tab-content btc_shop_index_content_tabs_main">
             <div id="grid" class="tab-pane fade in active">
                 <div class="row">
+
+                    @foreach ($products as $item)
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="btc_shop_indx_cont_box_wrapper">
                             <div class="btc_shop_indx_img_wrapper">
                                 <ul>
                                     <li class="btc_shop_price">new</li>
                                 </ul>
-                                <img src="images/shop/li_img1.jpg" alt="shop_img" class="img-responsive" />
+                                
+                               
+                                @if ($item->images!=null && count($item->images)>0)
+                                 <img src="{{asset('storage/'.$item->images[0]->path)}}" alt="shop_img" class="img-responsive" style="height:300px"/>
+                                @else
+                                <img src="{{asset('no-photo.jpg')}}" alt="shop_img" class="img-responsive" style="height:300px"/>
+                                @endif
                                 <div class="cc_li_img_overlay">
                                     <div class="cc_li_img_text">
                                         <ul>
@@ -54,8 +62,8 @@
 
                             <div class="btc_shop_indx_img_cont_wrapper">
 
-                                <h1><a href="#">WESTERN WEAR RED</a></h1>
-                                <h5>$  156</h5>
+                                <h1><a href="#">{{$item->title}}</a></h1>
+                                <h5>{{$item->price}}</h5>
                                 <div class="cc_li_cont_wrapper">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -66,11 +74,16 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
+
+                 
 
                 </div>
             </div>
-            <div id="list" class="tab-pane fade">
+            {{--  <div id="list" class="tab-pane fade">
                 <div class="row">
+                    
+
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="btc_shop_indx_cont_list_box_wrapper shop_fullwidth_list_wrapper">
                             <div class="btc_shop_list_img_wrapper">
@@ -103,7 +116,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>  --}}
         </div>
     </div>
 </div>
@@ -111,22 +124,8 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <!-- blog_pagination_section start -->
     <div class="shop_pagination_section">
-        <ul>
-            <li>
-                <a href="#" class="prev"> previous</a>
-            </li>
-            <li><a href="#">01</a>
-            </li>
-            <li class="active_pagination"><a href="#">02</a>
-            </li>
+        {{ $products->links() }}
 
-            <li><a href="#" class="hidden-xs hidden-sm">03</a>
-            </li>
-            <li><a href="#" class="hidden-xs hidden-sm">04</a>
-            </li>
-            <li><a href="#" class="next">next</a>
-            </li>
-        </ul>
     </div>
     <!-- blog_pagination_section end -->
 </div>
