@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', 'DashboardController@index');
