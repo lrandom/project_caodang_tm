@@ -496,20 +496,20 @@
 	
 	//SPORT SHOP VIDEO PLAY
 	
-	$('.play-trigger').magnificPopup({
-        type: 'iframe'
-      });
-      $.extend(true, $.magnificPopup.defaults, {
-        iframe: {
-          patterns: {
-            youtube: {
-              index: 'youtube.com/',
-              id: 'v=',
-              src: 'http://www.youtube.com/embed/%id%?autoplay=1'
-            }
-          }
-        }
-      });
+	// $('.play-trigger').magnificPopup({
+  //       type: 'iframe'
+  //     });
+      // $.extend(true, $.magnificPopup.defaults, {
+      //   iframe: {
+      //     patterns: {
+      //       youtube: {
+      //         index: 'youtube.com/',
+      //         id: 'v=',
+      //         src: 'http://www.youtube.com/embed/%id%?autoplay=1'
+      //       }
+      //     }
+      //   }
+      // });
 
 });
 
