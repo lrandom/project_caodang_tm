@@ -10,7 +10,7 @@ class FilterTypeController extends Controller
 {
     function index ()
     {
-        $data = FilterType::with('parent')->paginate(15); //phan trang
+        $data = FilterType::paginate(15); //phan trang
         return view('admin.filter_type.index', ['data' => $data]);
     }
 
@@ -40,7 +40,7 @@ class FilterTypeController extends Controller
         if (is_numeric($id)) {
             $filterType = FilterType::find($id);
         }
-        return view('admin.filter_type.edit', ['filterType' => $filterType);
+        return view('admin.filter_type.edit', ['filterType' => $filterType]);
     }
 
     function delete (Request $request)
