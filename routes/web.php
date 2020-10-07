@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('/product-detail','ProductController@detail');
+Route::get('/product-detail/{id}','ProductController@detail');
 
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', 'DashboardController@index');
