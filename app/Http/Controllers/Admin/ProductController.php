@@ -14,9 +14,11 @@ class ProductController extends Controller
     function index ()
     {
         $data = Product::with('category')
-            ->with(['images'=>function($q){
-                $q->where('is_preview',1);
-            }])->paginate(15); //phan trang
+            ->with([
+                'images' => function ($q) {
+                    $q->where('is_preview', 1);
+                }
+            ])->paginate(15); //phan trang
         //return view('admin.users.index',$data);
         //dd($data);
         return view('admin.products.index', ['data' => $data]);
@@ -45,7 +47,7 @@ class ProductController extends Controller
                     $fileExtension = $file->getClientOriginalExtension(); //lấy đuôi file
                     $fileName = time().$i.'.'.$fileExtension;
                     Storage::disk('local')
-                    ->put('public/products/'.$fileName, file_get_contents($file));
+                        ->put('public/products/'.$fileName, file_get_contents($file));
                     $filePaths[] = 'products/'.$fileName;
                 }
             }
