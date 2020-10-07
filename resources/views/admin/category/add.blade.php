@@ -12,22 +12,30 @@
         <form role="form" method="post">
             @csrf
             <div class="card-body">
-        
 
                 <div class="form-group">
                     <label>Name</label>
                     <input type="text" name="name" class="form-control">
                 </div>
 
-               
+                <div class="form-group">
+                    <label>Filter Type</label>
+                    <select class="form-control" name="parent_id">
+{{--                        <option value="0">No parent</option>--}}
+                        @foreach ($filter_type as $r)
+                            <option value="{{$r->id}}">{{$r->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
                 <div class="form-group">
                     <label>Parents</label>
                     <select class="form-control" name="parent_id">
                         <option value="0">No parent</option>
                         @foreach ($parentCategory as $r)
-                        <option value="{{$r->id}}">{{$r->name}}</option>
+                            <option value="{{$r->id}}">{{$r->name}}</option>
                         @endforeach
-                    
+
                     </select>
                 </div>
 

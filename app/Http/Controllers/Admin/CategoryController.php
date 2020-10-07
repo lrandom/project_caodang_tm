@@ -5,23 +5,24 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Category;
+use App\FilterType;
 
 class CategoryController extends Controller
 {
-    function index(){
+    function index ()
+    {
         $data = Category::with('parent')->paginate(15); //phan trang
         //return view('admin.users.index',$data);
         //dd($data);
-        return view('admin.category.index',['data'=>$data]);
+        return view('admin.category.index', ['data' => $data]);
     }
+
     //
-    function add(Request $request)
+    function add (Request $request)
     {
         if ($request->isMethod('post')) {
             $name = $request->name;
             $parent_id = $request->parent_id;
-          
-
             //tạo mới một đối tượng user
             $category = new Category;
             $category->parent_id = $parent_id;
@@ -29,13 +30,20 @@ class CategoryController extends Controller
             $category->save();
         }
         $data = Category::all();
-        return view('admin.category.add',['parentCategory'=>$data]);
+        $filterType = FilterType::all();
+        return view('admin.category.add',
+            [
+                'parentCategory' => $data,
+                'filter_type' => $filterType
+            ]
+        );
     }
 
-    function edit(Request $request){
-        $id  = $request->id;
+    function edit (Request $request)
+    {
+        $id = $request->id;
 
-        if($request->isMethod('POST')){
+        if ($request->isMethod('POST')) {
             //cập nhật bản ghi
             $category = Category::find($id);
             //dd($request->parent_id);
@@ -44,19 +52,26 @@ class CategoryController extends Controller
             $category->save();
         }
 
-        if(is_numeric($id)){
+        if (is_numeric($id)) {
             $category = Category::find($id);
         }
-        $data = Category::where('id','!=',$id)->get();
-        return view('admin.category.edit',['category'=>$category,'parentCategory'=>$data]);
+        $data = Category::where('id', '!=', $id)->get();
+        $filterType = FilterType::all();
+        return view('admin.category.edit',
+            [
+                'category' => $category,
+                'parentCategory' => $data,
+                'filter_type' => $filterType
+            ]);
     }
 
-    function delete(Request $request){
-       $id = $request->id;
-       $user = Category::find($id); //tìm user có id truyền vào
-       if($user!=null){
-         $user->delete();
-       }
-       return redirect('admin/category');
+    function delete (Request $request)
+    {
+        $id = $request->id;
+        $user = Category::find($id); //tìm user có id truyền vào
+        if ($user != null) {
+            $user->delete();
+        }
+        return redirect('admin/category');
     }
 }
