@@ -14,7 +14,8 @@
                 <tr>
                     <th style="width: 10px">#</th>
                     <th>Name</th>
-                    <th>Parent Id</th>
+                    <th>Parent Categogry</th>
+                    <th>Filter Type</th>
                     <th>
                         Thao tác
                     </th>
@@ -27,6 +28,7 @@
                         <td>{{$r->id}}</td>
                         <td>{{$r->name}}</td>
                         <td>{{$r->parent['name']}}</td>
+                        <td>{{$r->filterType['name']}}</td>
                         <td>
                             <a href="{{url('admin/category/delete?id='.$r->id)}}">Xoá</a>
                             <a href="{{url('admin/category/edit?id='.$r->id)}}">Sửa</a>

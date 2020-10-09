@@ -23,10 +23,12 @@ class CategoryController extends Controller
         if ($request->isMethod('post')) {
             $name = $request->name;
             $parent_id = $request->parent_id;
-            //tạo mới một đối tượng user
+            $filter_type_id = $request->filter_type_id;
+            //tạo mới một đối tượng category
             $category = new Category;
             $category->parent_id = $parent_id;
             $category->name = $name;
+            $category->filter_type_id = $filter_type_id;
             $category->save();
         }
         $data = Category::all();
@@ -47,6 +49,7 @@ class CategoryController extends Controller
             //cập nhật bản ghi
             $category = Category::find($id);
             //dd($request->parent_id);
+            $category->filter_type_id = $request->filter_type_id;
             $category->name = $request->name;
             $category->parent_id = $request->parent_id;
             $category->save();

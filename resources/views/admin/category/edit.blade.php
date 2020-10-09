@@ -21,10 +21,10 @@
 
                 <div class="form-group">
                     <label>Filter Type</label>
-                    <select class="form-control" name="parent_id">
+                    <select class="form-control" name="filter_type_id">
                         {{--                        <option value="0">No parent</option>--}}
                         @foreach ($filter_type as $r)
-                            <option <?php if ($r->id === $category->filter_type_id) {
+                            <option <?php if ($r->id == $category->filter_type_id) {
                                 echo 'selected';
                             } ?> value="{{$r->id}}">{{$r->name}}</option>
                         @endforeach
@@ -40,10 +40,8 @@
                                 echo 'selected';
                             } ?> value="{{$r->id}}">{{$r->name}}</option>
                         @endforeach
-
                     </select>
                 </div>
-
             </div>
             <!-- /.card-body -->
 

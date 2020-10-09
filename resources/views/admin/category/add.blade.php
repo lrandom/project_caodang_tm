@@ -20,8 +20,8 @@
 
                 <div class="form-group">
                     <label>Filter Type</label>
-                    <select class="form-control" name="parent_id">
-{{--                        <option value="0">No parent</option>--}}
+                    <select class="form-control" name="filter_type_id">
+                        {{--                        <option value="0">No parent</option>--}}
                         @foreach ($filter_type as $r)
                             <option value="{{$r->id}}">{{$r->name}}</option>
                         @endforeach

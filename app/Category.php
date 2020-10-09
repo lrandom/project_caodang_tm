@@ -13,4 +13,9 @@ class Category extends Model
     {
         return $this->hasOne('App\Category', 'id', 'parent_id');
     }
+
+    public function filterType ()
+    {
+        return $this->belongsTo('App\FilterType', 'filter_type_id', 'id');
+    }
 }

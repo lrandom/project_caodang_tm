@@ -8,13 +8,14 @@ use App\Product;
 use App\Category;
 use App\Image;
 use Illuminate\Support\Facades\Storage;
+use App\CategoryProduct;
 
 class ProductController extends Controller
 {
     function index ()
     {
-        $data = Product::with('category')
-            ->with([
+        $data = Product
+            ::with([
                 'images' => function ($q) {
                     $q->where('is_preview', 1);
                 }
@@ -32,10 +33,18 @@ class ProductController extends Controller
             $product->title = $request->title;
             $product->price = $request->price;
             $product->content = $request->content;
-            $product->category_id = $request->category_id;
+            //$product->category_id = $request->category_id;
             $product->quantity = $request->quantity;
             $product->sell_count = 0;//chua ban đc phát nào
             $product->save();
+
+            $categoryProduct = new CategoryProduct();
+            $category = Category::find($request->category_id);
+
+            $categoryProduct->category_id = $request->category_id;
+            $categoryProduct->product_id = $product->id;
+            $categoryProduct->filter_type_id = $category->filter_type_id;
+            $categoryProduct->save();
 
             //mang lưu đường dẫn file
             $filePaths = [];
