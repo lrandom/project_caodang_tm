@@ -14,7 +14,7 @@
 Route::get('/', 'HomeController@index');
 Route::get('/product-detail/{id}', 'ProductController@detail');
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/dashboard', 'DashboardController@index');
     Route::prefix('users')->group(function () {
         Route::get('/add', 'Admin\UserController@add');
@@ -51,3 +51,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/delete', 'Admin\ProductController@delete');
     });
 });
+
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
