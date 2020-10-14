@@ -16,7 +16,7 @@
                     <th>Image</th>
                     <th>Title</th>
                     <th>Price</th>
-                    <th>Category</th>
+                    <th>Filter</th>
                     <th>Quantity</th>
                     <th>Sell Count</th>
                     <th>
@@ -38,8 +38,23 @@
                         <td>{{$r->price}}</td>
                         <td>
 
-                            @foreach($r->category as $item)
-                                {{$item->name}}
+                            <?php
+                            $category = $r->category;
+                            $filters = $category->groupBy('filter_type_id');
+                            ?>
+
+                            @foreach($filters as $item)
+
+                                @if($item[0]->filterType['name']!=null)
+                                    <label for="">{{$item[0]->filterType['name']}}</label>
+                                @else
+                                    <label for=""> Danh mục</label>
+                                @endif
+                                <div>
+                                    @foreach($item as $i)
+                                        <span class="badge badge-warning"> {{$i->name}}</span>
+                                    @endforeach
+                                </div>
                             @endforeach
                         </td>
                         <td>{{$r->quantity}}</td>
