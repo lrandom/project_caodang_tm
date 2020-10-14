@@ -34,13 +34,26 @@
 
                 <div class="form-group">
                     <label>Category</label>
-                    <select class="form-control" name="category_id">
-                     
-                        @foreach ($category as $r)
-                        <option value="{{$r->id}}">{{$r->name}}</option>
-                        @endforeach
-                    
-                    </select>
+                    @foreach ($category as $r)
+                        <div>
+                            <span>{{$r->name}}</span>
+                            <input type="checkbox" name="filter[]" value="{{$r->id}}|{{$r->filter_type_id}}"/>
+                        </div>
+                    @endforeach
+                </div>
+
+                <div>
+                    @foreach ($options as $r)
+                        <div>
+                            <label>{{$r[0]->filterType['name']}}</label>
+                            @foreach ($r as $r1)
+                                <div>
+                                    <span>{{$r1->name}}</span>
+                                    <input type="checkbox" name="filter[]" value="{{$r1->id}}|{{$r1->filter_type_id}}"/>
+                                </div>
+                            @endforeach
+                        </div>
+                    @endforeach
                 </div>
 
                 <input type="file" name="file_1"/>

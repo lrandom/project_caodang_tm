@@ -69,8 +69,14 @@ class ProductController extends Controller
                 $image->save();
             }
         }
-        $data = Category::all();
-        return view('admin.products.add', ['category' => $data]);
+        $category = Category::where('filter_type_id', 0)->get();
+        $options = Category::where('filter_type_id', '<>', 0)->get();
+        //$options = collect($options);
+        $options = $options->groupBy('filter_type_id');
+
+        //dd($options);
+
+        return view('admin.products.add', ['category' => $category, 'options' => $options]);
     }
 
     function edit (Request $request)
