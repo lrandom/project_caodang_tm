@@ -18,6 +18,14 @@
                     <label>Name</label>
                     <input type="text" name="name" class="form-control">
                 </div>
+
+                <div class="form-group">
+                    <label for="">Type</label>
+                    <select name="type" class="form-control">
+                        <option value="1">Not option Product</option>
+                        <option value="2">Option Product</option>
+                    </select>
+                </div>
             </div>
             <!-- /.card-body -->
 

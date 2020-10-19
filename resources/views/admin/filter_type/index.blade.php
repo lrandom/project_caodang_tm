@@ -14,6 +14,7 @@
                 <tr>
                     <th style="width: 10px">#</th>
                     <th>Name</th>
+                    <th>Type</th>
                     <th>
                         Thao tác
                     </th>
@@ -25,6 +26,15 @@
                     <tr>
                         <td>{{$r->id}}</td>
                         <td>{{$r->name}}</td>
+                        <td>
+                            @if($r->type==1)
+                                <span class="badge badge-primary">Not product option</span>
+                            @endif
+
+                            @if($r->type==2)
+                                <span class="badge badge-primary">Product option</span>
+                            @endif
+                        </td>
                         <td>
                             <a href="{{url('admin/filter_type/delete?id='.$r->id)}}">Xoá</a>
                             <a href="{{url('admin/filter_type/edit?id='.$r->id)}}">Sửa</a>

@@ -22,6 +22,7 @@ class FilterTypeController extends Controller
             //tạo mới một đối tượng Filter Type
             $filterType = new FilterType;
             $filterType->name = $name;
+            $filterType->type = $request->type;
             $filterType->save();
         }
         return view('admin.filter_type.add');
@@ -35,6 +36,7 @@ class FilterTypeController extends Controller
             //cập nhật bản ghi
             $filterType = FilterType::find($id);
             $filterType->name = $request->name;
+            $filterType->type = $request->type;
             $filterType->save();
         }
         if (is_numeric($id)) {
