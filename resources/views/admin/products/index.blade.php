@@ -47,8 +47,6 @@
 
                                 @if($item[0]->filterType['name']!=null)
                                     <label for="">{{$item[0]->filterType['name']}}</label>
-                                @else
-                                    <label for=""> Danh mục</label>
                                 @endif
                                 <div>
                                     @foreach($item as $i)

@@ -8,11 +8,14 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     //
-    function detail($id){
+    function detail ($id)
+    {
         $product = Product
-        ::with('images')
-        ->where('id',$id)->first();
+            ::with('images')
+            ->where('id', $id)->first();
+
+
         return view('frontends.product-detail',
-        ['product'=>$product]);
+            ['product' => $product]);
     }
 }

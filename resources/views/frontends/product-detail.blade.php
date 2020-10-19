@@ -83,43 +83,30 @@
                 </div>
                 <div class="btc_shop_prod_quanty_bar">
                     <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 full_width">
-                            <div class="cc_ps_quantily_info">
-                                <div class="select_number">
-                                    <button onclick="changeQty(1); return false;" class="increase"><i
-                                            class="fa fa-plus"></i>
-                                    </button>
-                                    <input type="text" name="quantity" value="1" size="2" id="input-quantity"
-                                           class="form-control">
-                                    <button onclick="changeQty(0); return false;" class="decrease"><i
-                                            class="fa fa-minus"></i>
-                                    </button>
+
+
+                        <?php
+                        $category = $product->category;
+                        $filters = $category->groupBy('filter_type_id');
+                        //dd($filters);
+                        ?>
+
+
+                        @foreach($filters as $item)
+                            @if($item[0]->filterType['name']!=null && $item[0]->filterType['type']==2)
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 full_width">
+                                    <label for="">{{$item[0]->filterType['name']}}</label>
+                                    <div class="cc_ps_color_selectobx">
+                                        <select>
+                                            @foreach($item as $i)
+                                                <option>{{$i->name}}</option>
+                                            @endforeach
+                                        </select><i class="fa fa-caret-down"></i>
+                                    </div>
                                 </div>
-                                <input type="hidden" name="product_id">
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 full_width">
-                            <div class="cc_ps_color_selectobx">
-                                <select>
-                                    <option> Size List</option>
-                                    <option> 32</option>
-                                    <option> 33</option>
-                                    <option> 34</option>
-                                    <option> 35</option>
-                                </select><i class="fa fa-caret-down"></i>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 full_width">
-                            <div class="cc_ps_color_selectobx">
-                                <select>
-                                    <option> Color</option>
-                                    <option> Red</option>
-                                    <option> Orange</option>
-                                    <option> Blue</option>
-                                    <option> Green</option>
-                                </select><i class="fa fa-caret-down"></i>
-                            </div>
-                        </div>
+                            @endif
+                        @endforeach
+
                     </div>
                 </div>
                 <div class="btc_shop_product_price_wrapper">
