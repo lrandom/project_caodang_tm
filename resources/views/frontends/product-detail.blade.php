@@ -99,7 +99,9 @@
                                     <div class="cc_ps_color_selectobx">
                                         <select name="filter[]">
                                             @foreach($item as $i)
-                                                <option value="{{$item[0]->filterType['id']}}|{{$i->id}}">{{$i->name}}</option>
+                                                <option
+                                                    value="{{$item[0]->filterType['id']}}|{{$i->id}}|{{$i->name}}">
+                                                    {{$i->name}}</option>
                                             @endforeach
                                         </select><i class="fa fa-caret-down"></i>
                                     </div>
