@@ -42,9 +42,7 @@
                             $category = $r->category;
                             $filters = $category->groupBy('filter_type_id');
                             ?>
-
                             @foreach($filters as $item)
-
                                 @if($item[0]->filterType['name']!=null)
                                     <label for="">{{$item[0]->filterType['name']}}</label>
                                 @endif

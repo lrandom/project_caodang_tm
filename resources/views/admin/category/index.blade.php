@@ -27,7 +27,11 @@
                     <tr>
                         <td>{{$r->id}}</td>
                         <td>{{$r->name}}</td>
-                        <td>{{$r->parent['name']}}</td>
+                        <td>
+                            @if($r->parent!=null)
+                                {{$r->parent['name']}}
+                            @endif
+                        </td>
                         <td>{{$r->filterType['name']}}</td>
                         <td>
                             <a href="{{url('admin/category/delete?id='.$r->id)}}">Xoá</a>

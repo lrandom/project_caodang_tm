@@ -97,9 +97,9 @@
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 full_width">
                                     <label for="">{{$item[0]->filterType['name']}}</label>
                                     <div class="cc_ps_color_selectobx">
-                                        <select>
+                                        <select name="filter[]">
                                             @foreach($item as $i)
-                                                <option>{{$i->name}}</option>
+                                                <option value="{{$item[0]->filterType['id']}}|{{$i->id}}">{{$i->name}}</option>
                                             @endforeach
                                         </select><i class="fa fa-caret-down"></i>
                                     </div>
