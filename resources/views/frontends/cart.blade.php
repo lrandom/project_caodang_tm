@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="btc_shop_single_prod_right_section shop_product_single_head related_pdt_shop_head">
-                <h1>Your cart Products (04)</h1>
+                <h1>Your cart Products ({{count($products)}})</h1>
             </div>
         </div>
         <div class="shop_cart_page_wrapper">
@@ -49,7 +49,7 @@
                                 </td>
                                 <td class="cart_page_totl">{{$r->price * $r->quantity}}</td>
                                 <td>
-                                    <a href="#"> <i class="fa fa-trash"></i></a>
+                                    <a href="?action=delete&id={{$r->id}}"> <i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                         @endforeach

@@ -37,10 +37,19 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
-    function cart ()
+    function cart (Request $request)
     {
+        if ($request->input('action') != null) {
+            $action = $request->input('action');
+            switch ($action) {
+                case 'delete':
+                    //xoa sp khoi gio hang
+                    $id = $request->input('id');
+                    \Cart::session('cart')->remove($id);
+                    break;
+            }
+        }
         $products = \Cart::session('cart')->getContent();
-        // dd($products);
         return view('frontends.cart', ['products' => $products]);
     }
 }
