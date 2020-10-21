@@ -126,7 +126,7 @@
                         <div class="cc_ps_cart_btn">
                             <ul>
                                 <li>
-                                    <button type="submit"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                                    <button><i class="fa fa-shopping-cart"></i> Add to Cart</button>
                                 </li>
 
 
