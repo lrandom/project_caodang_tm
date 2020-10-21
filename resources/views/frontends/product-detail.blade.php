@@ -82,6 +82,7 @@
                     <h5>{{$product->content}}</h5>
                 </div>
                 <form method="post" action="{{url('add-to-cart')}}">
+                    @csrf
                     <input type="hidden" name="product-id" value="{{$product->id}}"/>
                     <div class="btc_shop_prod_quanty_bar">
                         <div class="row">
@@ -99,7 +100,7 @@
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 full_width">
                                         <label for="">{{$item[0]->filterType['name']}}</label>
                                         <div class="cc_ps_color_selectobx">
-                                            <select name="filter[]">
+                                            <select name="filters[]">
                                                 @foreach($item as $i)
                                                     <option
                                                         value="{{$item[0]->filterType['id']}}|{{$i->id}}|{{$i->name}}">

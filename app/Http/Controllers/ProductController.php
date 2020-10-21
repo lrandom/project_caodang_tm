@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -17,5 +18,23 @@ class ProductController extends Controller
 
         return view('frontends.product-detail',
             ['product' => $product]);
+    }
+
+    function addToCart (Request $request)
+    {
+        $id = $request->input('product-id');
+        $product = Product::find($id);
+        $filters = $request->input('filters');
+
+        //Thêm sản phẩm vào giỏ hàng
+        \Cart::session('cart')->add(array(
+            'id' => $id,
+            'name' => $product->title,
+            'price' => $product->price,
+            'quantity' => 1,
+            'attributes' => $filters
+        ));
+
+        return redirect()->back();
     }
 }

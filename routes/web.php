@@ -13,6 +13,7 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/product-detail/{id}', 'ProductController@detail');
+Route::post('/add-to-cart', 'ProductController@addToCart');
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/dashboard', 'DashboardController@index');
