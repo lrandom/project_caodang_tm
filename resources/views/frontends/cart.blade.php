@@ -26,125 +26,35 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>
-                                1
-                            </td>
-                            <td>
-                                <div class="table_cart_img">
-                                    <figure>
-                                        <img src="images/shop/cart_1.png" alt="">
-                                    </figure>
-                                </div>
-                                <div class="table_cart_cntnt">
-                                    <h1>SATIN ONE PIECE</h1>
-                                    <p>color : black </p>
-                                </div>
-                            </td>
-                            <td></td>
-                            <td class="cart_page_price">$199.00</td>
-                            <td>
-                                <input value="1" type="number">
-                            </td>
-                            <td class="cart_page_totl">$299.00</td>
-                            <td>
-                                <a href="#"> <i class="fa fa-trash"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                2
-                            </td>
-                            <td>
-                                <div class="table_cart_img">
-                                    <figure>
-                                        <img src="images/shop/cart_2.png" alt="">
-                                    </figure>
-                                </div>
-                                <div class="table_cart_cntnt">
-                                    <h1>FLORAL PRINT TOP</h1>
-                                    <p>color : black </p>
-                                </div>
-                            </td>
-                            <td></td>
-                            <td class="cart_page_price">$199.00</td>
-                            <td>
-                                <input value="1" type="number">
-                            </td>
-                            <td class="cart_page_totl">$399.00</td>
-                            <td>
-                                <a href="#"> <i class="fa fa-trash"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                3
-                            </td>
-                            <td>
-                                <div class="table_cart_img">
-                                    <figure>
-                                        <img src="images/shop/cart_3.png" alt="">
-                                    </figure>
-                                </div>
-                                <div class="table_cart_cntnt">
-                                    <h1>CREPE FROCK</h1>
-                                    <p>color : black </p>
-                                </div>
-                            </td>
-                            <td></td>
-                            <td class="cart_page_price">$99.00</td>
-                            <td>
-                                <input value="1" type="number">
-                            </td>
-                            <td class="cart_page_totl">$199.00</td>
-                            <td>
-                                <a href="#"> <i class="fa fa-trash"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                4
-                            </td>
-                            <td>
-                                <div class="table_cart_img">
-                                    <figure>
-                                        <img src="images/shop/cart_4.png" alt="">
-                                    </figure>
-                                </div>
-                                <div class="table_cart_cntnt">
-                                    <h1>TUNIC LONG TOP</h1>
-                                    <p>color : black </p>
-                                </div>
-                            </td>
-                            <td></td>
-                            <td class="cart_page_price">$199.00</td>
-                            <td>
-                                <input value="1" type="number">
-                            </td>
-                            <td class="cart_page_totl">$299.00</td>
-                            <td>
-                                <a href="#"> <i class="fa fa-trash"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
+                        @foreach($products as $r)
+                            <tr>
+                                <td>
+                                    {{$r->id}}
+                                </td>
+                                <td>
+                                    <div class="table_cart_img">
+                                        <figure>
+                                            <img src="images/shop/cart_1.png" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="table_cart_cntnt">
+                                        <h1>{{$r->name}}</h1>
+                                        <p>color : black </p>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td class="cart_page_price">{{$r->price}}</td>
+                                <td>
+                                    <input value="{{$r->quantity}}" type="number">
+                                </td>
+                                <td class="cart_page_totl">{{$r->price * $r->quantity}}</td>
+                                <td>
+                                    <a href="#"> <i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        @endforeach
 
-                            <td></td>
-                            <td class="shop_btn_wrapper shop_car_btn_wrapper">
 
-                                <ul>
-                                    <li><a href="#">continue shopping</a>
-                                    </li>
-                                </ul>
-
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-
-                            <td class="cart_btn_cntnt"> Sub Total : <span>$1192.00 </span></td>
-                            <td></td>
-
-                        </tr>
                         </tbody>
                     </table>
                 </div>

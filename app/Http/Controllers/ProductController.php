@@ -39,6 +39,8 @@ class ProductController extends Controller
 
     function cart ()
     {
-        return view('frontends.cart');
+        $products = \Cart::session('cart')->getContent();
+        // dd($products);
+        return view('frontends.cart', ['products' => $products]);
     }
 }
