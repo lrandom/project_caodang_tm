@@ -36,6 +36,13 @@ class ProductController extends Controller
             'image' => $product->images[0]->path,
             'filters' => $filters
         ];
+
+
+        foreach ($filters as $filter) {
+            $filterArray = explode('|', $filter);
+            $id = $id.'-'.$filterArray[0].'-'.$filterArray[2];
+        }
+
         \Cart::session('cart')->add(array(
             'id' => $id,
             'name' => $product->title,

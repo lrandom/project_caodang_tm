@@ -27,10 +27,12 @@
                         </thead>
                         <tbody>
 
+                        @php $index=0; @endphp
                         @foreach($products as $r)
+                            @php $index++; @endphp
                             <tr>
                                 <td>
-                                    {{$r->id}}
+                                    {{$index}}
                                 </td>
                                 <td>
                                     <div class="table_cart_img" style="float:left">
@@ -53,7 +55,9 @@
                                         @endforeach
                                     </div>
                                 </td>
-                                <td></td>
+                                <td>
+
+                                </td>
                                 <td class="cart_page_price">{{$r->price}}</td>
                                 <td>
                                     <input style="width:50px;float:left" readonly value="{{$r->quantity}}"
