@@ -26,18 +26,19 @@
                         </tr>
                         </thead>
                         <tbody>
+
                         @foreach($products as $r)
                             <tr>
                                 <td>
                                     {{$r->id}}
                                 </td>
                                 <td>
-                                    <div class="table_cart_img">
-                                        <figure>
-                                            <img src="images/shop/cart_1.png" alt="">
-                                        </figure>
+                                    <div class="table_cart_img" style="float:left">
+                                        <img width="50" height="50"
+                                             src="{{asset('storage/'.$r->attributes->image)}}">
                                     </div>
-                                    <div class="table_cart_cntnt">
+
+                                    <div class="table_cart_cntnt" style="float:left;">
                                         <h1>{{$r->name}}</h1>
                                         <p>color : black </p>
                                     </div>

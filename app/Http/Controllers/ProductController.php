@@ -23,16 +23,26 @@ class ProductController extends Controller
     function addToCart (Request $request)
     {
         $id = $request->input('product-id');
-        $product = Product::find($id);
+        $product = Product::with([
+            'images' => function ($q) {
+                $q->where('is_preview', 1);
+            }
+        ])->where('id', $id)->first();
         $filters = $request->input('filters');
         //Chưa có sp trong giỏ hàng
         //Thêm sản phẩm vào giỏ hàng
+
+        $extrasAttrs = [
+            'image' => $product->images[0]->path,
+            'filters' => $filters
+        ];
         \Cart::session('cart')->add(array(
             'id' => $id,
             'name' => $product->title,
             'price' => $product->price,
             'quantity' => 1,
-            'attributes' => $filters
+            'product_image' => $product->images[0]->path,
+            'attributes' => $extrasAttrs
         ));
         return redirect()->back();
     }
@@ -55,6 +65,8 @@ class ProductController extends Controller
                     ]);
                     break;
             }
+
+            return redirect('cart');
         }
         $products = \Cart::session('cart')->getContent();
         return view('frontends.cart', ['products' => $products]);
