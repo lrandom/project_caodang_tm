@@ -81,56 +81,60 @@
                     <p>10 Reviews <span><a href="#">Add Your Review</a></span></p>
                     <h5>{{$product->content}}</h5>
                 </div>
-                <div class="btc_shop_prod_quanty_bar">
-                    <div class="row">
+                <form method="post" action="{{url('add-to-cart')}}">
+                    <input type="hidden" name="product-id" value="{{$product->id}}"/>
+                    <div class="btc_shop_prod_quanty_bar">
+                        <div class="row">
 
 
-                        <?php
-                        $category = $product->category;
-                        $filters = $category->groupBy('filter_type_id');
-                        //dd($filters);
-                        ?>
+                            <?php
+                            $category = $product->category;
+                            $filters = $category->groupBy('filter_type_id');
+                            //dd($filters);
+                            ?>
 
 
-                        @foreach($filters as $item)
-                            @if($item[0]->filterType['name']!=null && $item[0]->filterType['type']==2)
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 full_width">
-                                    <label for="">{{$item[0]->filterType['name']}}</label>
-                                    <div class="cc_ps_color_selectobx">
-                                        <select name="filter[]">
-                                            @foreach($item as $i)
-                                                <option
-                                                    value="{{$item[0]->filterType['id']}}|{{$i->id}}|{{$i->name}}">
-                                                    {{$i->name}}</option>
-                                            @endforeach
-                                        </select><i class="fa fa-caret-down"></i>
+                            @foreach($filters as $item)
+                                @if($item[0]->filterType['name']!=null && $item[0]->filterType['type']==2)
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 full_width">
+                                        <label for="">{{$item[0]->filterType['name']}}</label>
+                                        <div class="cc_ps_color_selectobx">
+                                            <select name="filter[]">
+                                                @foreach($item as $i)
+                                                    <option
+                                                        value="{{$item[0]->filterType['id']}}|{{$i->id}}|{{$i->name}}">
+                                                        {{$i->name}}</option>
+                                                @endforeach
+                                            </select><i class="fa fa-caret-down"></i>
+                                        </div>
                                     </div>
-                                </div>
-                            @endif
-                        @endforeach
+                                @endif
+                            @endforeach
 
+                        </div>
                     </div>
-                </div>
-                <div class="btc_shop_product_price_wrapper">
-                    <ul>
-                        <li>{{$product->price}}</li>
-                        <li>
-                            <del>$250.00</del>
-                        </li>
-                        <li>(70% OFF)</li>
-                    </ul>
-                </div>
-                <div class="cc_ps_cart_btn_wrapper">
-                    <div class="cc_ps_cart_btn">
+                    <div class="btc_shop_product_price_wrapper">
                         <ul>
-                            <li>
-                                <a href="#"> <i class="fa fa-shopping-cart"></i> Add to Cart</a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-heart"></i> wishlist</a></li>
-
+                            <li>{{$product->price}}</li>
+                            {{--                        <li>--}}
+                            {{--                            $250.00--}}
+                            {{--                        </li>--}}
+                            {{--                        <li>(70% OFF)</li>--}}
                         </ul>
                     </div>
-                </div>
+                    <div class="cc_ps_cart_btn_wrapper">
+                        <div class="cc_ps_cart_btn">
+                            <ul>
+                                <li>
+                                    <button type="submit"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                                </li>
+
+
+                                {{--                            <li><a href="#"><i class="fa fa-heart"></i> wishlist</a></li>--}}
+                            </ul>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
