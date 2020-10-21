@@ -103,7 +103,7 @@
                                             <select name="filters[]">
                                                 @foreach($item as $i)
                                                     <option
-                                                        value="{{$item[0]->filterType['id']}}|{{$i->id}}|{{$i->name}}">
+                                                        value="{{$item[0]->filterType['id']}}|{{$item[0]->filterType['name']}}|{{$i->id}}|{{$i->name}}">
                                                         {{$i->name}}</option>
                                                 @endforeach
                                             </select><i class="fa fa-caret-down"></i>

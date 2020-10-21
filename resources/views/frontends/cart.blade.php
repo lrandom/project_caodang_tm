@@ -40,7 +40,17 @@
 
                                     <div class="table_cart_cntnt" style="float:left;">
                                         <h1>{{$r->name}}</h1>
-                                        <p>color : black </p>
+                                        @php
+                                            $filters = $r->attributes->filters;
+
+                                        @endphp
+
+                                        @foreach($filters as $filter)
+                                            @php
+                                                $filter = explode('|', $filter);
+                                            @endphp
+                                            <p>{{$filter[1]}} : {{$filter[3]}}</p>
+                                        @endforeach
                                     </div>
                                 </td>
                                 <td></td>
