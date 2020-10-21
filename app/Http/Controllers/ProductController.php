@@ -25,7 +25,7 @@ class ProductController extends Controller
         $id = $request->input('product-id');
         $product = Product::find($id);
         $filters = $request->input('filters');
-
+        //Chưa có sp trong giỏ hàng
         //Thêm sản phẩm vào giỏ hàng
         \Cart::session('cart')->add(array(
             'id' => $id,
@@ -34,7 +34,11 @@ class ProductController extends Controller
             'quantity' => 1,
             'attributes' => $filters
         ));
-
         return redirect()->back();
+    }
+
+    function cart ()
+    {
+        return view('frontends.cart');
     }
 }
