@@ -45,7 +45,14 @@
                                 <td></td>
                                 <td class="cart_page_price">{{$r->price}}</td>
                                 <td>
-                                    <input value="{{$r->quantity}}" type="number">
+                                    <input style="width:50px;float:left" readonly value="{{$r->quantity}}"
+                                           type="number">
+
+                                    <span style="float:left;margin-left:10px;">
+                                         <a href="?action=update_quantity&id={{$r->id}}&quantity=1">+</a>
+                                         <a href="?action=update_quantity&id={{$r->id}}&quantity=-1">-</a>
+                                    </span>
+
                                 </td>
                                 <td class="cart_page_totl">{{$r->price * $r->quantity}}</td>
                                 <td>

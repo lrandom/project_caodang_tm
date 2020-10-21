@@ -47,6 +47,13 @@ class ProductController extends Controller
                     $id = $request->input('id');
                     \Cart::session('cart')->remove($id);
                     break;
+
+                case 'update_quantity':
+                    $id = $request->input('id');
+                    \Cart::session('cart')->update($id, [
+                        'quantity' => $request->quantity
+                    ]);
+                    break;
             }
         }
         $products = \Cart::session('cart')->getContent();
