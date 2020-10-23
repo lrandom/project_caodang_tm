@@ -15,6 +15,10 @@ Route::get('/', 'HomeController@index');
 Route::get('/product-detail/{id}', 'ProductController@detail');
 Route::post('/add-to-cart', 'ProductController@addToCart')->middleware(['auth']);
 Route::get('/cart', 'ProductController@cart')->middleware(['auth']);
+Route::post('/checkout', 'ProductController@checkout')->middleware(['auth']);
+Route::get('/checkout/success', function () {
+    return view('frontends.checkout_success');
+});
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/dashboard', 'DashboardController@index');

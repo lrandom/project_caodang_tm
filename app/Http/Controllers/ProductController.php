@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
 use App\Product;
+use App\ProductOrder;
 use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -76,6 +80,52 @@ class ProductController extends Controller
             return redirect('cart');
         }
         $products = \Cart::session('cart')->getContent();
-        return view('frontends.cart', ['products' => $products]);
+        $user = \Auth::user();
+        return view('frontends.cart', ['products' => $products, 'user' => $user]);
+    }
+
+    function checkout (Request $request)
+    {
+        //thong tin don hang
+        $fullname = $request->input('fullname');
+        $address = $request->input('address');
+        $phone = $request->input('phone');
+        $totalPrice = $request->input('total_price');
+        $note = $request->input('note');
+        $paymentMethod = $request->input('payment_method');
+        $quantity = $request->input('quantity');
+
+        DB::beginTransaction();
+        try {
+            $order = new Order();
+            $order->receiver_name = $fullname;
+            $order->address = $address;
+            $order->phone = substr($phone, 0, 10);
+            $order->quantity = $quantity;
+            $order->total_price = $totalPrice;
+            $order->note = $note;
+            $order->payment_method = $paymentMethod;
+            $order->user_id = Auth::user()->id;
+            $order->save();
+            DB::commit();
+
+            //lay thong tin sp trong don hang
+            $cart = \Cart::session('cart')->getContent();
+            foreach ($cart as $r) {
+                $productOrder = new ProductOrder();
+                $productOrder->quantity = $r->quantity;
+                $productOrder->price = $r->price;
+                $ids = explode('-', $r->id);
+                $productOrder->product_id = $ids[0];
+                $productOrder->order_id = $order->id;
+                $productOrder->filters_selected = $r->attributes['filters'];
+                $productOrder->save();
+                \Cart::session('cart')->remove($r->id);
+            }
+            //xoa gio hang
+            return redirect(url('checkout/success'));
+        } catch (Exception $e) {
+            DB::rollback();
+        }
     }
 }

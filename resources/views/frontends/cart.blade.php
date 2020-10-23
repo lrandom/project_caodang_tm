@@ -33,11 +33,13 @@
                             $total = 0;
                             $vat = 10;
                             $shipFee = 15; //15 usd
+                            $quantity = 0;
                         @endphp
                         @foreach($products as $r)
                             @php
                                 $index++;
                                 $subTotal += $r->price*$r->quantity;
+                                $quantity+=$r->quantity;
                             @endphp
                             <tr>
                                 <td>
@@ -100,18 +102,21 @@
                         class="btc_shop_single_prod_right_section shop_product_single_head related_pdt_shop_head related_pdt_shop_head_2">
                         <h1>Information : </h1>
 
-                        <input type="hidden" value="{{$total}}" name="total_price"/>
-                        <form class="custom-form" method="post">
+
+                        <form class="custom-form" method="post" action="{{url('checkout')}}">
                             @csrf
+                            <input type="hidden" value="{{$total}}" name="total_price"/>
+                            <input type="hidden" value="{{$quantity}}" name="quantity"/>
                             <div class="custom-input">
                                 <div>
                                     <label>Receiver name</label>
-                                    <input type="text" name="receiver_name" placeholder="Receiver name">
+                                    <input type="text" name="receiver_name" value="{{$user->fullname}}"
+                                           placeholder="Receiver name">
                                 </div>
 
                                 <div>
                                     <label for="">Address</label>
-                                    <input type="text" name="address" placeholder="Address">
+                                    <input type="text" name="address" value="{{$user->address}}" placeholder="Address">
                                 </div>
                             </div>
 
@@ -119,7 +124,8 @@
                             <div class="custom-input" style="margin-top:20px">
                                 <div>
                                     <label for="">Phone</label>
-                                    <input type="text" name="phone" placeholder="phone">
+                                    <input type="text" name="phone" value="{{$user->phone}}" placeholder="phone"
+                                           maxlength="10">
                                 </div>
 
                                 <div>
@@ -195,12 +201,6 @@
                             </tr>
                             </tbody>
                         </table>
-                        <div class="shop_btn_wrapper shop_btn_wrapper_shipping">
-                            <ul>
-                                <li><a href="#">Checkout</a>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
 
