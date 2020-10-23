@@ -27,9 +27,18 @@
                         </thead>
                         <tbody>
 
-                        @php $index=0; @endphp
+                        @php
+                            $index=0;
+                            $subTotal = 0;
+                            $total = 0;
+                            $vat = 10;
+                            $shipFee = 15; //15 usd
+                        @endphp
                         @foreach($products as $r)
-                            @php $index++; @endphp
+                            @php
+                                $index++;
+                                $subTotal += $r->price*$r->quantity;
+                            @endphp
                             <tr>
                                 <td>
                                     {{$index}}
@@ -76,19 +85,84 @@
                             </tr>
                         @endforeach
 
+                        @php
+                            $vatFee = ($subTotal*$vat)/100;
+                            $total = $vatFee+$subTotal+$shipFee;
+                        @endphp
 
                         </tbody>
                     </table>
                 </div>
 
+
                 <div class="estimate_shiping_Wrapper_cntnt estimate_shiping_Wrapper_cntnt_2">
                     <div
                         class="btc_shop_single_prod_right_section shop_product_single_head related_pdt_shop_head related_pdt_shop_head_2">
-                        <h1>coupan code enetr here : </h1>
-                        <div class="lr_nl_form_wrapper">
-                            <input type="text" placeholder="Type Your Code">
-                            <button type="submit">apply</button>
-                        </div>
+                        <h1>Information : </h1>
+
+                        <input type="hidden" value="{{$total}}" name="total_price"/>
+                        <form class="custom-form" method="post">
+                            @csrf
+                            <div class="custom-input">
+                                <div>
+                                    <label>Receiver name</label>
+                                    <input type="text" name="receiver_name" placeholder="Receiver name">
+                                </div>
+
+                                <div>
+                                    <label for="">Address</label>
+                                    <input type="text" name="address" placeholder="Address">
+                                </div>
+                            </div>
+
+
+                            <div class="custom-input" style="margin-top:20px">
+                                <div>
+                                    <label for="">Phone</label>
+                                    <input type="text" name="phone" placeholder="phone">
+                                </div>
+
+                                <div>
+                                    <label for="">Note</label>
+                                    <textarea name="note" placeholder="note"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="custom-input">
+                                <label for="">Phương thức thanh toán</label>
+                                <div>
+                                    <input type="radio" name="payment_method" value="1" checked="checked"> COD
+                                </div>
+                            </div>
+
+                            <div>
+                                <input type="submit" value="checkout"
+                                       style="padding:10px;background: #0279f8;color:white;border:0px;border-radius:5px"/>
+                            </div>
+
+                        </form>
+
+                        <style>
+                            .custom-form .custom-input {
+                                display: flex;
+                                justify-content: space-between;
+
+                            }
+
+                            .custom-form .custom-input > div {
+                                width: 45%;
+                            }
+
+                            .custom-form .custom-input input[type="text"],
+                            .custom-form .custom-input textarea {
+                                width: 100%;
+                                padding: 10px;
+                                border: 1px solid #cdcdcd;
+                                background-color: #efefef
+                            }
+
+                        </style>
+
                     </div>
                 </div>
 
@@ -97,59 +171,27 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 
                 <div class="shipping_Wrapper">
-                    <div
-                        class="btc_shop_single_prod_right_section shop_product_single_head related_pdt_shop_head related_pdt_shop_head_2">
-                        <h1>estimate shipping : </h1>
-                    </div>
-                    <div class="estimate_shiping_Wrapper_cntnt">
-                        <div class="custome-select style2">
-                            <span>Select country <i class="fa fa-angle-down"></i></span>
-                            <select>
-                                <option>United States</option>
-                                <option>Austraila</option>
-                                <option>London</option>
-                            </select>
-                        </div>
 
-                        <div class="custome-select style2">
-                            <span>Select State <i class="fa fa-angle-down"></i></span>
-                            <select>
-                                <option>United States</option>
-                                <option>Austraila</option>
-                                <option>London</option>
-                            </select>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Enter ZIP code">
-                        <div class="shop_btn_wrapper shop_btn_wrapper_shipping">
-                            <ul>
-                                <li><a href="#">check</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                     <div class="estimate_shiping_Wrapper_cntnt estimate_shiping_Wrapper_repsnse">
 
                         <table class="table">
                             <tbody>
                             <tr>
                                 <th>Sub Total :</th>
-                                <td><span class="price">$1,00.00</span></td>
+                                <td><span class="price">{{$subTotal}}</span></td>
                             </tr>
                             <tr>
-                                <th>IGST 18% :</th>
-                                <td><span class="price">$200.00</span></td>
+                                <th>VAT {{$vat}}% :</th>
+                                <td><span class="price">{{$vatFee}}</span></td>
+                            </tr>
+
+                            <tr>
+                                <th> Shipfee:</th>
+                                <td><span class="price">{{$shipFee}}</span></td>
                             </tr>
                             <tr>
-                                <th>CGST 20% :</th>
-                                <td><span class="price">$200.00</span></td>
-                            </tr>
-                            <tr>
-                                <th> Discount:</th>
-                                <td><span class="price">-$200.00</span></td>
-                            </tr>
-                            <tr>
-                                <th class="cart_btn_cntnt"> Sub Total :</th>
-                                <td><span class="cart_btn_cntnt_clr">$1192.00 </span></td>
+                                <th class="cart_btn_cntnt"> Total :</th>
+                                <td><span class="cart_btn_cntnt_clr">{{$total}}</span></td>
                             </tr>
                             </tbody>
                         </table>

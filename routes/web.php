@@ -13,8 +13,8 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/product-detail/{id}', 'ProductController@detail');
-Route::post('/add-to-cart', 'ProductController@addToCart');
-Route::get('/cart', 'ProductController@cart');
+Route::post('/add-to-cart', 'ProductController@addToCart')->middleware(['auth']);
+Route::get('/cart', 'ProductController@cart')->middleware(['auth']);
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/dashboard', 'DashboardController@index');
