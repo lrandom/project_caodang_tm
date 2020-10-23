@@ -67,7 +67,7 @@
                                 <td>
 
                                 </td>
-                                <td class="cart_page_price">{{$r->price}}</td>
+                                <td class="cart_page_price">{{formatMoney($r->price)}}</td>
                                 <td>
                                     <input style="width:50px;float:left" readonly value="{{$r->quantity}}"
                                            type="number">
@@ -178,26 +178,26 @@
                             <tbody>
                             <tr>
                                 <th>Sub Total :</th>
-                                <td><span class="price">{{$subTotal}}</span></td>
+                                <td><span class="price">{{formatMoney($subTotal)}}</span></td>
                             </tr>
                             <tr>
                                 <th>VAT {{$vat}}% :</th>
-                                <td><span class="price">{{$vatFee}}</span></td>
+                                <td><span class="price">{{formatMoney($vatFee)}}</span></td>
                             </tr>
 
                             <tr>
                                 <th> Shipfee:</th>
-                                <td><span class="price">{{$shipFee}}</span></td>
+                                <td><span class="price">{{formatMoney($shipFee)}}</span></td>
                             </tr>
                             <tr>
                                 <th class="cart_btn_cntnt"> Total :</th>
-                                <td><span class="cart_btn_cntnt_clr">{{$total}}</span></td>
+                                <td><span class="cart_btn_cntnt_clr">{{formatMoney($total)}}</span></td>
                             </tr>
                             </tbody>
                         </table>
                         <div class="shop_btn_wrapper shop_btn_wrapper_shipping">
                             <ul>
-                                <li><a href="#">checkout</a>
+                                <li><a href="#">Checkout</a>
                                 </li>
                             </ul>
                         </div>
