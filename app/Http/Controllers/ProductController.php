@@ -128,4 +128,11 @@ class ProductController extends Controller
             DB::rollback();
         }
     }
+
+    function search (Request $request)
+    {
+        $title = $request->input('q');
+        $product = Product::where('title', 'like', '%'.$title.'%')->paginate();
+        return view('frontends.search', ['product' => $product]);
+    }
 }
