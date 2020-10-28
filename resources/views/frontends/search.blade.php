@@ -265,305 +265,53 @@
                         <div class="tab-content btc_shop_index_content_tabs_main">
                             <div id="grid" class="tab-pane fade in active">
                                 <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                        <div class="btc_shop_indx_cont_box_wrapper">
-                                            <div class="btc_shop_indx_img_wrapper">
-                                                <ul>
-                                                    <li class="btc_shop_price">new</li>
-                                                </ul>
-                                                <img src="images/shop/li_img1.jpg" alt="shop_img"
-                                                     class="img-responsive">
-                                                <div class="cc_li_img_overlay">
-                                                    <div class="cc_li_img_text">
-                                                        <ul>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    @foreach($product as $r)
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                            <div class="btc_shop_indx_cont_box_wrapper">
+                                                <div class="btc_shop_indx_img_wrapper">
+                                                    <ul>
+                                                        <li class="btc_shop_price">new</li>
+                                                    </ul>
 
-                                                            <li><a href="#"><i class="fa fa-expand"></i></a></li>
-                                                        </ul>
+                                                    @if ($r->images!=null && count($r->images)>0)
+
+                                                        <img src="{{asset('storage/'.$r->images[0]->path)}}"
+                                                             alt="shop_img"
+                                                             class="img-responsive">
+                                                    @else
+                                                        <img src="{{asset('no-photo.jpg')}}" alt="shop_img"
+                                                             class="img-responsive" style="height:300px"/>
+                                                    @endif
+
+                                                    <div class="cc_li_img_overlay">
+                                                        <div class="cc_li_img_text">
+                                                            <ul>
+                                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a>
+                                                                </li>
+                                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+
+                                                                <li><a href="#"><i class="fa fa-expand"></i></a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="btc_shop_indx_img_cont_wrapper">
+
+                                                    <h1><a href="#">{{$r->title}}</a></h1>
+                                                    <h5>{{formatMoney($r->price)}}</h5>
+                                                    <div class="cc_li_cont_wrapper">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                        <i class="fa fa-star-o"></i>
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <div class="btc_shop_indx_img_cont_wrapper">
-
-                                                <h1><a href="#">WESTERN WEAR RED</a></h1>
-                                                <h5>$ 156</h5>
-                                                <div class="cc_li_cont_wrapper">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                        <div class="btc_shop_indx_cont_box_wrapper">
-                                            <div class="btc_shop_indx_img_wrapper">
-
-                                                <img src="images/shop/li_img2.jpg" alt="shop_img"
-                                                     class="img-responsive">
-                                                <div class="cc_li_img_overlay">
-                                                    <div class="cc_li_img_text">
-                                                        <ul>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-
-                                                            <li><a href="#"><i class="fa fa-expand"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="btc_shop_indx_img_cont_wrapper">
-
-                                                <h1><a href="#">SUNSHINE IN MY SOUL</a></h1>
-                                                <h5>$ 156</h5>
-                                                <div class="cc_li_cont_wrapper">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                        <div class="btc_shop_indx_cont_box_wrapper">
-                                            <div class="btc_shop_indx_img_wrapper">
-
-                                                <img src="images/shop/li_img3.jpg" alt="shop_img"
-                                                     class="img-responsive">
-                                                <div class="cc_li_img_overlay">
-                                                    <div class="cc_li_img_text">
-                                                        <ul>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-
-                                                            <li><a href="#"><i class="fa fa-expand"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="btc_shop_indx_img_cont_wrapper">
-
-                                                <h1><a href="#">BLACK DRESS</a></h1>
-                                                <h5>$ 156</h5>
-                                                <div class="cc_li_cont_wrapper">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                        <div class="btc_shop_indx_cont_box_wrapper">
-                                            <div class="btc_shop_indx_img_wrapper">
-
-                                                <img src="images/shop/li_img4.jpg" alt="shop_img"
-                                                     class="img-responsive">
-                                                <div class="cc_li_img_overlay">
-                                                    <div class="cc_li_img_text">
-                                                        <ul>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-
-                                                            <li><a href="#"><i class="fa fa-expand"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="btc_shop_indx_img_cont_wrapper">
-
-                                                <h1><a href="#">SPRING FASHION GIRL</a></h1>
-                                                <h5>$ 156</h5>
-                                                <div class="cc_li_cont_wrapper">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                        <div class="btc_shop_indx_cont_box_wrapper">
-                                            <div class="btc_shop_indx_img_wrapper">
-                                                <ul>
-                                                    <li class="btc_shop_price">new</li>
-                                                </ul>
-                                                <img src="images/shop/li_img5.jpg" alt="shop_img"
-                                                     class="img-responsive">
-                                                <div class="cc_li_img_overlay">
-                                                    <div class="cc_li_img_text">
-                                                        <ul>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-
-                                                            <li><a href="#"><i class="fa fa-expand"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="btc_shop_indx_img_cont_wrapper">
-
-                                                <h1><a href="#">AMAZING SUMMER</a></h1>
-                                                <h5>$ 156</h5>
-                                                <div class="cc_li_cont_wrapper">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                        <div class="btc_shop_indx_cont_box_wrapper">
-                                            <div class="btc_shop_indx_img_wrapper">
-                                                <ul>
-                                                    <li class="btc_shop_price btc_stock">out of stock</li>
-                                                </ul>
-                                                <img src="images/shop/li_img6.jpg" alt="shop_img"
-                                                     class="img-responsive">
-                                                <div class="cc_li_img_overlay">
-                                                    <div class="cc_li_img_text">
-                                                        <ul>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-
-                                                            <li><a href="#"><i class="fa fa-expand"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="btc_shop_indx_img_cont_wrapper">
-
-                                                <h1><a href="#">CREPE FROCK</a></h1>
-                                                <h5>$ 156</h5>
-                                                <div class="cc_li_cont_wrapper">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                        <div class="btc_shop_indx_cont_box_wrapper">
-                                            <div class="btc_shop_indx_img_wrapper">
-
-                                                <img src="images/shop/li_img7.jpg" alt="shop_img"
-                                                     class="img-responsive">
-                                                <div class="cc_li_img_overlay">
-                                                    <div class="cc_li_img_text">
-                                                        <ul>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-
-                                                            <li><a href="#"><i class="fa fa-expand"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="btc_shop_indx_img_cont_wrapper">
-
-                                                <h1><a href="#">WOMEN'S A-LINE</a></h1>
-                                                <h5>$ 156</h5>
-                                                <div class="cc_li_cont_wrapper">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                        <div class="btc_shop_indx_cont_box_wrapper">
-                                            <div class="btc_shop_indx_img_wrapper">
-                                                <ul>
-                                                    <li class="btc_shop_price btc_stock">out of stock</li>
-                                                </ul>
-                                                <img src="images/shop/li_img8.jpg" alt="shop_img"
-                                                     class="img-responsive">
-                                                <div class="cc_li_img_overlay">
-                                                    <div class="cc_li_img_text">
-                                                        <ul>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-
-                                                            <li><a href="#"><i class="fa fa-expand"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="btc_shop_indx_img_cont_wrapper">
-
-                                                <h1><a href="#">FLORAL PRINT TOP</a></h1>
-                                                <h5>$ 156</h5>
-                                                <div class="cc_li_cont_wrapper">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                        <div class="btc_shop_indx_cont_box_wrapper">
-                                            <div class="btc_shop_indx_img_wrapper">
-                                                <ul>
-                                                    <li class="btc_shop_price">new</li>
-                                                </ul>
-                                                <img src="images/shop/li_img9.jpg" alt="shop_img"
-                                                     class="img-responsive">
-                                                <div class="cc_li_img_overlay">
-                                                    <div class="cc_li_img_text">
-                                                        <ul>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-
-                                                            <li><a href="#"><i class="fa fa-expand"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="btc_shop_indx_img_cont_wrapper">
-
-                                                <h1><a href="#">SATIN ONE PIECE</a></h1>
-                                                <h5>$ 156</h5>
-                                                <div class="cc_li_cont_wrapper">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                    @endforeach
                                 </div>
                             </div>
                             <div id="list" class="tab-pane fade">
@@ -579,7 +327,7 @@
                                             </div>
                                             <div class="btc_shop_list_img_cont_wrapper">
 
-                                                <h1><a href="#">WESTERN WEAR RED</a></h1>
+                                                <h1><a href="#">{{$r->title}}</a></h1>
                                                 <h2>$ 156</h2>
                                                 <del>$ 250</del>
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do enim

@@ -132,7 +132,11 @@ class ProductController extends Controller
     function search (Request $request)
     {
         $title = $request->input('q');
-        $product = Product::where('title', 'like', '%'.$title.'%')->paginate();
+        $product = Product::with([
+            'images' => function ($q) {
+                $q->where('is_preview', 1);
+            }
+        ])->where('title', 'like', '%'.$title.'%')->paginate();
         return view('frontends.search', ['product' => $product]);
     }
 }
