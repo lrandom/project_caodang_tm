@@ -9,14 +9,14 @@ foreach ($products as $r) {
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="container">
         <div class="navbar-header hidden-xs hidden-sm">
-            <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt=""></a>
+            <a class="navbar-brand" href="index.html">
+                <img src="{{asset('imgs/logo.png')}}" alt=""></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                       aria-haspopup="true" aria-expanded="false">
+                    <a href="{{url('/')}}">
                         Home
                     </a>
                 </li>
