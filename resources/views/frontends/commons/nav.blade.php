@@ -1,3 +1,10 @@
+<?php
+$products = \Cart::session('cart')->getContent();
+$totalProduct = 0;
+foreach ($products as $r) {
+    $totalProduct += $r->quantity;
+}
+?>
 <nav class="navbar mega-menu navbar-default">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="container">
@@ -12,7 +19,6 @@
                        aria-haspopup="true" aria-expanded="false">
                         Home
                     </a>
-
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -155,7 +161,7 @@
                 <li class="dropdown cart_dropdown_wrapper">
                     <a href="{{url('cart')}}"><i
                             class="fa fa-shopping-cart"></i>
-                        <span id="cart-badge" class="badge badge-warning">3</span>
+                        <span id="cart-badge" class="badge badge-warning">{{$totalProduct}}</span>
                     </a>
                 </li>
                 <!-- /.Cart Option -->
