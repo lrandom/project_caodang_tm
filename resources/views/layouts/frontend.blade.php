@@ -131,14 +131,27 @@ Author: Webstrot
 <div class="page_header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-md-8 col-xs-12 col-sm-6">
-                <h1> Shop Fullwidth </h1>
-            </div>
+            {{--            <div class="col-lg-8 col-md-8 col-xs-12 col-sm-6">--}}
+            {{--                <h1> Shop Fullwidth </h1>--}}
+            {{--            </div>--}}
             <div class="col-lg-4 col-md-4 col-xs-12 col-sm-6">
                 <div class="sub_title_section">
                     <ul class="sub_title">
-                        <li><a href="#"> Home </a> <i class="fa fa-angle-right" aria-hidden="true"></i></li>
-                        <li> Shop Fullwidth</li>
+                        <li><a href="#">
+                                @if(isset($parent))
+                                    {{$parent}}
+                                @else
+                                    Home
+                                @endif
+                            </a>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </li>
+                        <li>
+                            @if(isset($child))
+                                {{$child}}
+                            @else
+
+                            @endif</li>
                     </ul>
                 </div>
             </div>

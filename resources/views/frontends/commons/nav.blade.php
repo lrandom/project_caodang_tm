@@ -10,7 +10,7 @@ foreach ($products as $r) {
     <div class="container">
         <div class="navbar-header hidden-xs hidden-sm">
             <a class="navbar-brand" href="{{url('/')}}">
-                <img src="{{asset('imgs/logo.png')}}" alt=""></a>
+                <img src="{{asset('imgs/logo.png')}}" alt="" style="height:35px"></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">

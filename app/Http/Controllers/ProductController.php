@@ -140,8 +140,13 @@ class ProductController extends Controller
         return view('frontends.search', ['product' => $product]);
     }
 
-    function filterByType ($filterTypeValue)
+    function filterByType ($filterTypeValue, Request $request)
     {
-
+        $filterName = $request->filter_name;
+        $filterValueName = $request->filter_value_name;
+        $products = Product::whereHas('category', function ($q) use ($filterTypeValue) {
+            $q->where('category_id', $filterTypeValue);
+        })->paginate(10);
+        return view('frontends.search', ['product' => $products, 'parent' => $filterName, 'child' => $filterValueName]);
     }
 }

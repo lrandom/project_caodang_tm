@@ -233,12 +233,13 @@
             <div class="row">
                 <div class="sidebar_shop_right">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="sidebar_widget">
-                            <div class="sc_shop_add">
-                                <a href="#"><img src="images/shop/banner_shop.jpg" class="img-responsive"
-                                                 alt="shop_img"></a>
-                            </div>
-                        </div>
+                        {{--                        <div class="sidebar_widget">--}}
+                        {{--                            <div class="sc_shop_add">--}}
+                        {{--                                <a href="#"><img src="images/shop/banner_shop.jpg" class="img-responsive"--}}
+                        {{--                                                 alt="shop_img"></a>--}}
+                        {{--                            </div>--}}
+                        {{--                        </div>--}}
+
                         <div class="sidebar_widget">
                             <div class="filter-area">
                                 <div class="showpro">
