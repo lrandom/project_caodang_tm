@@ -33,7 +33,7 @@ foreach ($products as $r) {
                         <ul class="dropdown-menu">
                             @foreach($r->filtersValue as $filterValue)
                                 <li>
-                                    <a href="#">
+                                    <a href="{{url('filter/'.$filterValue->id.'?filter_name='.$r->name.'&filter_value_name='.$filterValue->name)}}">
                                         {{$filterValue->name}}
                                         <span>
                                             <i class="fa fa-caret-right"></i>

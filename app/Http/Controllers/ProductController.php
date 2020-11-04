@@ -139,4 +139,9 @@ class ProductController extends Controller
         ])->where('title', 'like', '%'.$title.'%')->paginate();
         return view('frontends.search', ['product' => $product]);
     }
+
+    function filterByType ($filterTypeValue)
+    {
+
+    }
 }
