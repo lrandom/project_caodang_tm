@@ -51,45 +51,24 @@ Author: Webstrot
                             </li>
                             <!-- Cart Option -->
                             <li class="dropdown signin_wrapper">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-sign-in"></i> Login / Register
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="signin_dropdown">
-                                        <a href="#" class="btn btn-primary"> <span>Login with Facebook</span> <i
-                                                class="fa fa-facebook"></i> </a>
-                                        <a href="#" class="btn btn-primary google-plus"> Login with Google <i
-                                                class="fa fa-google-plus"></i> </a>
-                                        <h2>or</h2>
-                                        <div class="formsix-pos">
-                                            <div class="form-group i-email">
-                                                <input type="email" class="form-control" required="" id="emailTen"
-                                                       placeholder="Email Address *">
-                                            </div>
-                                        </div>
-                                        <div class="formsix-e">
-                                            <div class="form-group i-password">
-                                                <input type="password" class="form-control" required=""
-                                                       id="namTen-first" placeholder="Password *">
-                                            </div>
-                                        </div>
-                                        <div class="remember_box">
-                                            <label class="control control--checkbox">Remember me
-                                                <input type="checkbox">
-                                                <span class="control__indicator"></span>
-                                            </label>
-                                            <a href="#" class="forget_password">
-                                                Forgot Password
-                                            </a>
-                                        </div>
-                                        <div class="login_wrapper">
-                                            <a href="#" class="btn btn-primary login_btn"> Login </a>
-                                        </div>
-                                        <div class="sign_up_message">
-                                            <p>Don’t have an account ? <a href="#"> Sign up </a></p>
-                                        </div>
-                                    </li>
-                                </ul>
+
+                                <?php
+                                use Illuminate\Support\Facades\Auth;
+                                ?>
+                                @if (Auth::user()!=null)
+                                    <a href="{{url('profile')}}">
+                                        <i class="fa fa-user"></i> Hello {{Auth::user()->fullname}}
+                                    </a>
+                                @else
+                                    <a href="{{url('login')}}">
+                                        <i class="fa fa-sign-in"></i> Login
+                                    </a>
+                                    /
+                                    <a href="{{url('register')}}">
+                                        Register
+                                    </a>
+                                @endif
+
                             </li>
                             <!-- /.Cart Option -->
                         </ul>
