@@ -132,11 +132,21 @@ class ProductController extends Controller
     function search (Request $request)
     {
         $title = $request->input('q');
-        $product = Product::with([
+        $min_price = $request->input('min_price');
+        $max_price = $request->input('max_price');
+
+        $query = Product::with([
             'images' => function ($q) {
                 $q->where('is_preview', 1);
             }
-        ])->where('title', 'like', '%'.$title.'%')->paginate();
+        ])->where('title', 'like', '%'.$title.'%');
+
+        if (is_numeric($min_price) && is_numeric($max_price)) {
+            $query->where('price', '>=', $min_price);
+            $query->where('price', '<=', $max_price);
+        }
+
+        $product = $query->paginate();
         return view('frontends.search', ['product' => $product]);
     }
 

@@ -4,229 +4,51 @@
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="sidebar_widget">
                 <h4>Search Feed</h4>
-                <form class="search_form" role="search">
+                <form class="search_form" role="search" method="get" action="{{url('search')}}">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
+                        <input type="text" name="q" class="form-control" placeholder="Search">
                     </div>
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
-            <div class="sidebar_widget">
-                <h4>Categories</h4>
-                <div class="accordion_wrapper">
-                    <div class="panel-group" id="accordion_wrapperLeft">
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h2 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion_wrapperLeft"
-                                       href="#collapseSevenLeftTwo" aria-expanded="false">
-                                        smartphones
-                                    </a>
-                                </h2>
-                            </div>
-                            <div id="collapseSevenLeftTwo" class="panel-collapse collapse" aria-expanded="false"
-                                 role="tablist">
-                                <div class="panel-body">
-                                    <ul>
-                                        <li>
-                                            <i class="fa fa-angle-right"></i> samsung (2)
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-angle-right"></i> nokia (21)
-                                        </li>
-                                        <li><i class="fa fa-angle-right"></i> oppo(10)</li>
-                                    </ul>
 
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.panel-default -->
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h2 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion_wrapperLeft"
-                                       href="#collapseSevenLeftone" aria-expanded="false">
-                                        tablets
-
-                                    </a>
-                                </h2>
-                            </div>
-                            <div id="collapseSevenLeftone" class="panel-collapse collapse in" aria-expanded="false"
-                                 role="tablist">
-                                <div class="panel-body">
-                                    <ul>
-                                        <li><i class="fa fa-angle-right"></i> samsung (20)</li>
-                                        <li>
-                                            <i class="fa fa-angle-right"></i> lenovo(5)
-                                        </li>
-                                        <li><i class="fa fa-angle-right"></i> panasonic (10)</li>
-                                    </ul>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.panel-default -->
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h2 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion_wrapperLeft"
-                                       href="#collapseSevenLeftThree" aria-expanded="false">
-                                        Accessories (145)
-                                    </a>
-                                </h2>
-                            </div>
-                            <div id="collapseSevenLeftThree" class="panel-collapse collapse" aria-expanded="false"
-                                 role="tablist">
-                                <div class="panel-body">
-                                    <ul>
-                                        <li><i class="fa fa-angle-right"></i> powerbank (2)</li>
-                                        <li>
-                                            <i class="fa fa-angle-right"></i> memeory card (4)
-                                        </li>
-                                        <li><i class="fa fa-angle-right"></i>usb cable(10)</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.panel-default -->
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h2 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion_wrapperLeft"
-                                       href="#collapseSevenLeftFour" aria-expanded="false">
-                                        gadgets (21)
-                                    </a>
-                                </h2>
-                            </div>
-                            <div id="collapseSevenLeftFour" class="panel-collapse collapse" aria-expanded="false"
-                                 role="tablist">
-                                <div class="panel-body">
-                                    <ul>
-                                        <li><i class="fa fa-angle-right"></i> power bank(2)</li>
-                                        <li>
-                                            <i class="fa fa-angle-right"></i> usb cable(5)
-                                        </li>
-                                        <li><i class="fa fa-angle-right"></i>hard disk (10)</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.panel-default -->
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h2 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion_wrapperLeft"
-                                       href="#collapseSevenLeftFive" aria-expanded="false">
-                                        electronic(41)
-                                    </a>
-                                </h2>
-                            </div>
-                            <div id="collapseSevenLeftFive" class="panel-collapse collapse" aria-expanded="false"
-                                 role="tablist">
-                                <div class="panel-body">
-                                    <ul>
-                                        <li><i class="fa fa-angle-right"></i> hard disk (2)</li>
-                                        <li>
-                                            <i class="fa fa-angle-right"></i> Mobile Kit (45)
-                                        </li>
-                                        <li><i class="fa fa-angle-right"></i>usb cable (10)</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.panel-default -->
-                    </div>
-                    <!--end of /.panel-group-->
-                </div>
-                <!--end of accordion_wrapper-->
-            </div>
-            <div class="sidebar_widget">
-                <h4>offer products</h4>
-                <div class="latest_post_wrapper">
-
-                    <div class="blog_wrapper2">
-                        <div class="blog_image">
-                            <img src="images/blog/blog-5/blog_img2.jpg" class="img-responsive" alt="blog_img2">
-                        </div>
-                        <div class="blog_text">
-                            <h5><a href="#">EOS 450D Camera</a></h5>
-                            <div class="blog_date">$ 200 - $ 150</div>
-                        </div>
-                    </div>
-                    <div class="blog_wrapper3">
-                        <div class="blog_image">
-                            <img src="images/blog/blog-5/blog_img3.jpg" class="img-responsive" alt="blog_img3">
-                        </div>
-                        <div class="blog_text">
-                            <h5><a href="#">EOS 450D Camera</a></h5>
-                            <div class="blog_date">$ 200 - $ 150</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="sidebar_widget">
                 <h4>filter by price</h4>
                 <div class="widget price-range">
-                    <ul>
-                        <li class="range">
 
-                            <div id="range-price"
-                                 class="range-box ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                                <div class="ui-slider-range ui-corner-all ui-widget-header"
-                                     style="left: 8.33333%; width: 64.5833%;"></div>
-                                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"
-                                      style="left: 8.33333%;"></span><span tabindex="0"
-                                                                           class="ui-slider-handle ui-corner-all ui-state-default"
-                                                                           style="left: 72.9167%;"></span></div>
-                            <span>from:</span>
-                            <input type="text" id="price" class="price-box" readonly="">
-                        </li>
-                        <li class="shop_btn_wrapper">
-                            <ul>
-                                <li><a href="#">filter</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="sidebar_widget">
-                <h4>discount</h4>
-                <div class="archives_wrapper">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-caret-right" aria-hidden="true"></i> 10% off or more
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-caret-right" aria-hidden="true"></i> 20% off or more
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-caret-right" aria-hidden="true"></i> 70% off or more
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-caret-right" aria-hidden="true"></i> 75% off or more
-                            </a>
-                        </li>
-                    </ul>
+                    <form method="GET" action="{{url('search')}}">
+                        <ul>
+                            <li class="range">
+                                <div id="range-price"
+                                     class="range-box ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                                    <div class="ui-slider-range ui-corner-all ui-widget-header"
+                                         style="left: 8.33333%; width: 64.5833%;"></div>
+                                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"
+                                          style="left: 8.33333%;"></span><span tabindex="0"
+                                                                               class="ui-slider-handle ui-corner-all ui-state-default"
+                                                                               style="left: 72.9167%;"></span></div>
+                                <span>from:</span>
+                                <input type="text" id="price" class="price-box" readonly="">
+                                <input type="hidden" name="min_price"/>
+                                <input type="hidden" name="max_price"/>
+                            </li>
+
+                            <li class="shop_btn_wrapper">
+                                <ul>
+                                    <li>
+                                        <button>
+                                            Filter
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </form>
+
                 </div>
             </div>
 
-            <div class="sidebar_widget">
-                <div class="sc_shop_add">
-                    <a href="#"><img src="images/shop/add.jpg" class="img-responsive" alt="shop_img"></a>
-                </div>
-
-            </div>
 
         </div>
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
@@ -242,9 +64,9 @@
 
                         <div class="sidebar_widget">
                             <div class="filter-area">
-                                <div class="showpro">
-                                    <p><span>Showing 1-9</span> of 256 Results</p>
-                                </div>
+                                {{--                                <div class="showpro">--}}
+                                {{--                                    <p><span>Showing 1-9</span> of 256 Results</p>--}}
+                                {{--                                </div>--}}
                                 <select>
                                     <option>short by</option>
                                     <option>Laptop</option>
