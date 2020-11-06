@@ -12,6 +12,8 @@ foreach ($products as $r) {
             <a class="navbar-brand" href="{{url('/')}}">
                 <img src="{{asset('imgs/logo.png')}}" alt="" style="height:35px"></a>
         </div>
+
+
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -20,7 +22,6 @@ foreach ($products as $r) {
                         Home
                     </a>
                 </li>
-
                 <?php
                 $filterTypes = FilterType::with('filtersValue')->where('type', '1')->get();
                 ?>

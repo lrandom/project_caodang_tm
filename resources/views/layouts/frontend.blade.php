@@ -34,9 +34,21 @@ Author: Webstrot
                             <li><a href="#"><i class="fa fa-envelope"></i> hello@example.com</a></li>
                             <li class="contact_number_wrapper hidden-xs"><a href="#"><i class="fa fa-phone"></i> +1
                                     814 251 152</a></li>
+                            <li style="float:left;">
+                                <form method="get" action="{{url('search')}}">
+                                    <input type="text" name="q" style="color:#0b0b0b" placeholder="Search"/>
+                                </form>
+                            </li>
                         </ul>
                     </div>
                 </div>
+
+                <style>
+                    .contact_info_wrapper > ul li {
+                        margin-right: 0px !important;
+                    }
+                </style>
+
                 <div class="col-lg-6 col-sm-6 col-md-6 col-xs-6">
                     <!-- signin_and_social_icon_wrapper -->
                     <div class="signin_and_social_icon_wrapper">
