@@ -21,6 +21,9 @@ Route::get('/checkout/success', function () {
     return view('frontends.checkout_success');
 });
 
+Route::get('/profile', 'UserController@profile')->middleware(['auth']);
+Route::post('/profile', 'UserController@profile')->middleware(['auth']);
+
 Route::get('/filter/{filterTypeValue}', 'ProductController@filterByType');
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
