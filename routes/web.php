@@ -26,7 +26,7 @@ Route::post('/profile', 'UserController@profile')->middleware(['auth']);
 
 Route::get('/filter/{filterTypeValue}', 'ProductController@filterByType');
 
-Route::prefix('admin')->middleware(['auth'])->group(function () {
+Route::prefix('admin')->middleware(['check-user-level'])->group(function () {
     Route::get('/dashboard', 'DashboardController@index');
     Route::prefix('users')->group(function () {
         Route::get('/add', 'Admin\UserController@add');
