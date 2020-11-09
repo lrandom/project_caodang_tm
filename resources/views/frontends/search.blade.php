@@ -136,25 +136,26 @@
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <!-- blog_pagination_section start -->
-                    <div class="shop_pagination_section">
-                        <ul>
-                            <li>
-                                <a href="#" class="prev"> previous</a>
-                            </li>
-                            <li><a href="#">01</a>
-                            </li>
-                            <li class="active_pagination"><a href="#">02</a>
-                            </li>
+                {{--                    <div class="shop_pagination_section">--}}
+                {{--                        <ul>--}}
+                {{--                            <li>--}}
+                {{--                                <a href="#" class="prev"> previous</a>--}}
+                {{--                            </li>--}}
+                {{--                            <li><a href="#">01</a>--}}
+                {{--                            </li>--}}
+                {{--                            <li class="active_pagination"><a href="#">02</a>--}}
+                {{--                            </li>--}}
 
-                            <li><a href="#" class="hidden-xs hidden-sm">03</a>
-                            </li>
-                            <li><a href="#" class="hidden-xs hidden-sm">04</a>
-                            </li>
-                            <li><a href="#" class="next">next</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- blog_pagination_section end -->
+                {{--                            <li><a href="#" class="hidden-xs hidden-sm">03</a>--}}
+                {{--                            </li>--}}
+                {{--                            <li><a href="#" class="hidden-xs hidden-sm">04</a>--}}
+                {{--                            </li>--}}
+                {{--                            <li><a href="#" class="next">next</a>--}}
+                {{--                            </li>--}}
+                {{--                        </ul>--}}
+                {{--                    </div>--}}
+                <!-- blog_pagination_section end -->
+                    {{ $product->appends(request()->except('page'))->links() }}
                 </div>
             </div>
         </div>
