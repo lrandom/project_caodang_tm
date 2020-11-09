@@ -22,7 +22,7 @@ class CheckUserLevel
             return redirect(URL::to('/').'/login');
         }
 
-        if ($user->level === 1) {
+        if ($user->level === '1') {
             //nếu là user
             return redirect(URL::to('/'));
         }
