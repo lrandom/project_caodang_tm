@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     //
-    protected $table = 'category';
+    //protected $table = 'category';
+    protected $table = 'filter_type_values';
 
     function parent ()
     {

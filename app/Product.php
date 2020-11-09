@@ -11,7 +11,7 @@ class Product extends Model
     {
         ///return $this->belongsTo('App\Category', 'category_id', 'id');
         return $this->belongsToMany('App\Category',
-            'category_products',
+            'filter_type_values_products',
             'product_id',
             'category_id');
     }
