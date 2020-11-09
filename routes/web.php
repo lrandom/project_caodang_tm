@@ -26,7 +26,16 @@ Route::post('/profile', 'UserController@profile')->middleware(['auth']);
 
 Route::get('/filter/{filterTypeValue}', 'ProductController@filterByType');
 
+Route::get('signout', function () {
+    Auth::logout();
+    return redirect(URL::to('/login'));
+});
+
 Route::prefix('admin')->middleware(['check-user-level'])->group(function () {
+    Route::get('signout', function () {
+        Auth::logout();
+        return redirect(URL::to('/login'));
+    });
     Route::get('/dashboard', 'DashboardController@index');
     Route::prefix('users')->group(function () {
         Route::get('/add', 'Admin\UserController@add');

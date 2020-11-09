@@ -16,6 +16,10 @@
                 <a href="#" class="d-block">
                     {{Auth::user()->name}}
                 </a>
+
+                <a style="float:left" href="{{url('/admin/signout')}}">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
             </div>
         </div>
 
