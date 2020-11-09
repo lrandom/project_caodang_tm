@@ -54,7 +54,7 @@
                     <a href="#" class="nav-link active">
                         <i class="nav-icon fas fa-list"></i>
                         <p>
-                            Category
+                            FilterType Values
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>

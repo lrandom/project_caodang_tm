@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('header')
-    Category
+    Filter Type Value
 @endsection
 @section('content')
     <div class="card">
