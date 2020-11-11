@@ -9,13 +9,15 @@ use Hash;
 
 class UserController extends Controller
 {
-    function index(){
-        $data = User::paginate(15); //phan trang
+    function index ()
+    {
+        $data = User::orderBy('id', 'DESC')->paginate(15); //phan trang
         //return view('admin.users.index',$data);
-        return view('admin.users.index',['data'=>$data]);
+        return view('admin.users.index', ['data' => $data]);
     }
+
     //
-    function add(Request $request)
+    function add (Request $request)
     {
         if ($request->isMethod('post')) {
             $username = $request->name;
@@ -42,19 +44,21 @@ class UserController extends Controller
         return view('admin.users.add');
     }
 
-    function delete(Request $request){
-       $id = $request->id;
-       $user = User::find($id); //tìm user có id truyền vào
-       if($user!=null){
-         $user->delete();
-       }
-       return redirect('admin/users');
+    function delete (Request $request)
+    {
+        $id = $request->id;
+        $user = User::find($id); //tìm user có id truyền vào
+        if ($user != null) {
+            $user->delete();
+        }
+        return redirect('admin/users');
     }
 
-    function edit(Request $request){
-        $id  = $request->id;
+    function edit (Request $request)
+    {
+        $id = $request->id;
 
-        if($request->isMethod('POST')){
+        if ($request->isMethod('POST')) {
             //cập nhật bản ghi
             $user = User::find($id);
             $username = $request->name;
@@ -77,9 +81,9 @@ class UserController extends Controller
             $user->save(); //save user vào csdl mysql
         }
 
-        if(is_numeric($id)){
+        if (is_numeric($id)) {
             $user = User::find($id);
         }
-        return view('admin.users.edit',['user'=>$user]);
+        return view('admin.users.edit', ['user' => $user]);
     }
 }

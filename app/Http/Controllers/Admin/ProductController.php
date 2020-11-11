@@ -19,7 +19,7 @@ class ProductController extends Controller
                 'images' => function ($q) {
                     $q->where('is_preview', 1);
                 }
-            ])->paginate(15); //phan trang
+            ])->orderBy('id', 'DESC')->paginate(15); //phan trang
         return view('admin.products.index', ['data' => $data]);
     }
 

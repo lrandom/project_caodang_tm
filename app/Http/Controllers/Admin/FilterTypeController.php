@@ -10,7 +10,7 @@ class FilterTypeController extends Controller
 {
     function index ()
     {
-        $data = FilterType::paginate(15); //phan trang
+        $data = FilterType::orderBy('id', 'DESC')->paginate(15); //phan trang
         return view('admin.filter_type.index', ['data' => $data]);
     }
 
