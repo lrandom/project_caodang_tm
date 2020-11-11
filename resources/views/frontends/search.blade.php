@@ -82,51 +82,53 @@
                             <div id="grid" class="tab-pane fade in active">
                                 <div class="row">
                                     @foreach($product as $r)
-                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                            <div class="btc_shop_indx_cont_box_wrapper">
-                                                <div class="btc_shop_indx_img_wrapper">
-                                                    <ul>
-                                                        <li class="btc_shop_price">new</li>
-                                                    </ul>
+                                        <a href="{{url('product-detail/'.$r->id)}}">
+                                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                                <div class="btc_shop_indx_cont_box_wrapper">
+                                                    <div class="btc_shop_indx_img_wrapper">
+                                                        <ul>
+                                                            <li class="btc_shop_price">new</li>
+                                                        </ul>
 
-                                                    @if ($r->images!=null && count($r->images)>0)
+                                                        @if ($r->images!=null && count($r->images)>0)
 
-                                                        <img src="{{asset('storage/'.$r->images[0]->path)}}"
-                                                             alt="shop_img"
-                                                             class="img-responsive">
-                                                    @else
-                                                        <img src="{{asset('no-photo.jpg')}}" alt="shop_img"
-                                                             class="img-responsive" style="height:300px"/>
-                                                    @endif
+                                                            <img src="{{asset('storage/'.$r->images[0]->path)}}"
+                                                                 alt="shop_img"
+                                                                 class="img-responsive">
+                                                        @else
+                                                            <img src="{{asset('no-photo.jpg')}}" alt="shop_img"
+                                                                 class="img-responsive" style="height:300px"/>
+                                                        @endif
 
-                                                    <div class="cc_li_img_overlay">
-                                                        <div class="cc_li_img_text">
-                                                            <ul>
-                                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                                                </li>
-                                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                        <div class="cc_li_img_overlay">
+                                                            <div class="cc_li_img_text">
+                                                                <ul>
+                                                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a>
+                                                                    </li>
+                                                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
 
-                                                                <li><a href="#"><i class="fa fa-expand"></i></a>
-                                                                </li>
-                                                            </ul>
+                                                                    <li><a href="#"><i class="fa fa-expand"></i></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="btc_shop_indx_img_cont_wrapper">
+
+                                                        <h1><a href="#" class="truncate">{{$r->title}}</a></h1>
+                                                        <h5>{{formatMoney($r->price)}}</h5>
+                                                        <div class="cc_li_cont_wrapper">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                            <i class="fa fa-star-o"></i>
                                                         </div>
                                                     </div>
                                                 </div>
-
-                                                <div class="btc_shop_indx_img_cont_wrapper">
-
-                                                    <h1><a href="#" class="truncate">{{$r->title}}</a></h1>
-                                                    <h5>{{formatMoney($r->price)}}</h5>
-                                                    <div class="cc_li_cont_wrapper">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                    </div>
-                                                </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     @endforeach
                                 </div>
                             </div>
