@@ -71,6 +71,10 @@ Author: Webstrot
                                     <a href="{{url('profile')}}">
                                         <i class="fa fa-user"></i> Hello {{Auth::user()->fullname}}
                                     </a>
+                                    &nbsp;
+                                    <a href="{{url('signout')}}">
+                                        <i class="fa fa-sign-out"></i>
+                                    </a>
                                 @else
                                     <a href="{{url('login')}}">
                                         <i class="fa fa-sign-in"></i> Login
