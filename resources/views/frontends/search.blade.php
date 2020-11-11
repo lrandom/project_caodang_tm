@@ -115,7 +115,7 @@
 
                                                 <div class="btc_shop_indx_img_cont_wrapper">
 
-                                                    <h1><a href="#">{{$r->title}}</a></h1>
+                                                    <h1><a href="#" class="truncate">{{$r->title}}</a></h1>
                                                     <h5>{{formatMoney($r->price)}}</h5>
                                                     <div class="cc_li_cont_wrapper">
                                                         <i class="fa fa-star"></i>

@@ -170,5 +170,14 @@ Author: Webstrot
 <!-- shop sidebar end -->
 
 @include('frontends.commons.footer')
+
+<style>
+    .truncate {
+        width: 250px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
 </body>
 </html>
